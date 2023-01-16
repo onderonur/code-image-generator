@@ -1,0 +1,71 @@
+/* TODO: Bunun ismi değiştirilebilir. */
+.editor-stage {
+  background-repeat: no-repeat;
+  padding: 2rem;
+  width: fit-content;
+  margin-inline: auto;
+  border-radius: 1rem;
+}
+
+.editor-wrapper {
+  max-width: 42rem;
+  margin-inline: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.editor-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  padding: var(--header-padding);
+}
+
+.editor-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-header-button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
+}
+
+.editor-header-button-red {
+  background-color: #ff605c;
+}
+
+.editor-header-button-yellow {
+  background-color: #ffbd44;
+}
+
+.editor-header-button-green {
+  background-color: #00ca4e;
+}
+
+.editor-wrapper .cm-editor {
+  padding: calc(2 * var(--header-padding) + var(--button-size) + 0.5rem) 1rem
+    1rem;
+  font-size: 1rem;
+}
+
+.background-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.background-selector label {
+  cursor: pointer;
+}
+
+.background-selector input {
+  cursor: pointer;
+}
+
+.background-selector-TODO {
+  border: 0.1rem solid blue;
+}

@@ -1,0 +1,33 @@
+.editor-previews__item {
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.editor-previews__item input {
+  cursor: pointer;
+}
+
+.editor-previews__item__editor-wrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.editor-previews__item__editor-wrapper .cm-editor {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.editor-previews__item__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.editor-previews__item__name {
+  font-weight: 600;
+  color: #fff;
+}
