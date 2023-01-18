@@ -3,14 +3,14 @@
   background-repeat: no-repeat;
   padding: 2rem;
   width: fit-content;
+  min-width: 12rem;
   margin-inline: auto;
-  border-radius: 1rem;
 }
 
 .editor-wrapper {
-  max-width: 42rem;
+  max-width: 52rem;
   margin-inline: auto;
-  border-radius: 1rem;
+  border-radius: var(--main-editor-border-radius);
   overflow: hidden;
   position: relative;
   box-shadow: var(--shadow-elevation-medium);
@@ -47,8 +47,10 @@
 }
 
 .editor-wrapper .cm-editor {
-  padding: calc(2 * var(--header-padding) + var(--button-size) + 0.5rem) 1rem
-    1rem;
+  padding: var(--main-editor-padding);
+  padding-block-start: calc(
+    2 * var(--header-padding) + var(--button-size) + 0.5rem
+  );
   font-size: 1rem;
 }
 
@@ -67,5 +69,28 @@
 }
 
 .background-selector-TODO {
-  border: 0.1rem solid blue;
+  border: 0.2rem solid lightblue;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.settings-item {
+  flex: 1;
+}
+
+.header {
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.title {
+  /* TODO: Bu fontsize bi ilginç çalışıo header'la. bi ara bak */
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-block-end: 0.5rem;
 }

@@ -2,6 +2,9 @@
   --button-size: 0.75rem;
   --header-padding: 1rem;
 
+  --color-border: hsl(0, 0%, 50%);
+
+  /* TODO: Shadow'lar mor. Düzelt */
   --shadow-color: 286deg 36% 56%;
   --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
     0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
@@ -29,14 +32,14 @@
   --gradient-6: linear-gradient(45deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
   --gradient-7: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 55%, #ff99ac 100%);
   --gradient-8: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+
+  --main-editor-padding: 2rem;
+  --main-editor-border-radius: 0.4rem;
 }
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body {
+  background-color: #222;
+  color: #fff;
 }
 
 .sr-only {

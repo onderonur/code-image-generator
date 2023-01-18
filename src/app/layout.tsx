@@ -1,12 +1,14 @@
-import './globals.css'
+import { Inter } from "@next/font/google";
+import "@/styling/reset.css";
+import "@/styling/globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const font = Inter({ subsets: ["latin"] });
+
+type RootLayoutProps = React.PropsWithChildren;
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -14,5 +16,5 @@ export default function RootLayout({
       <head />
       <body>{children}</body>
     </html>
-  )
+  );
 }
