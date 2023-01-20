@@ -1,0 +1,34 @@
+.control {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.input {
+  color: #fff;
+}
+
+.singleValue {
+  color: #fff;
+}
+
+.menu {
+  background-color: var(--color-body);
+  z-index: var(--z-index-max);
+}
+
+.option {
+  cursor: pointer;
+}
+
+.optionFocused {
+  background-color: var(--color-body-light);
+}
+
+.optionFocused:active {
+  background-color: var(--color-body-lighter);
+}
+
+.optionSelected {
+  /* TODO: Fix */
+  background-color: var(--color-body-lighter);
+}

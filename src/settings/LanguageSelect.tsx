@@ -1,6 +1,5 @@
-import { useId } from "react";
-import Select from "react-select";
 import { langNames, LanguageName } from "@uiw/codemirror-extensions-langs";
+import BaseSelect from "@/common/BaseSelect";
 
 type LanguageOption = { value: LanguageName; label: LanguageName };
 
@@ -14,7 +13,5 @@ type LanguageSelectProps = {
 };
 
 export default function LanguageSelect(props: LanguageSelectProps) {
-  const id = useId();
-
-  return <Select instanceId={id} options={languageOptions} {...props} />;
+  return <BaseSelect options={languageOptions} {...props} />;
 }

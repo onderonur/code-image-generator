@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import ThemeSelect from "@/editor/ThemeSelect";
+import ThemeSelect from "@/settings/ThemeSelect";
 import { LanguageOption, ThemeOption } from "@/editor/EditorTypes";
-import LanguageSelect from "@/editor/LanguageSelect";
+import LanguageSelect from "@/settings/LanguageSelect";
 import Editor from "@/editor/Editor";
-import GradientRadioGroup from "@/editor/GradientRadioGroup";
+import GradientRadioGroup, { gradients } from "@/settings/GradientRadioGroup";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
+import Button from "@/common/Button";
 import "./page.css";
 
 // TODO: 404 page vs ekle
@@ -30,58 +31,42 @@ export default function Counter() {
   );
 }`;
 
+async function getBlob() {
+  const node = document.getElementById("to-be-exported");
+
+  if (!node) {
+    throw new Error("Node can not be found");
+  }
+
+  const blob = await domtoimage.toBlob(node);
+
+  return blob;
+}
+
 export default function Page() {
   const [selectedTheme, setSelectedTheme] = useState<ThemeOption>({
     value: "vscodeDark",
     label: "vscodeDark",
   });
   const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>({
-    value: "jsx",
-    label: "jsx",
+    value: "tsx",
+    label: "tsx",
   });
   const [lineNumbers, setLineNumbers] = useState(false);
-  const [selectedBackground, setSelectedBackground] = useState(0);
-
-  async function getBlob() {
-    const node = document.getElementById("to-be-exported");
-
-    if (!node) {
-      throw new Error("Node can not be found");
-    }
-
-    const blob = await domtoimage.toBlob(node);
-
-    return blob;
-  }
+  const [selectedGradient, setSelectedGradient] = useState(gradients[0]);
 
   return (
     <div>
-      <button
-        onClick={async () => {
-          const blob = await getBlob();
-          saveAs(blob, "test.png");
-        }}
-      >
-        Download
-      </button>
-      <button
-        onClick={async () => {
-          const blob = await getBlob();
-          navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
-        }}
-      >
-        Copy to Clipboard
-      </button>
       <header className="header">
         <h1 className="title">Code Image Generator</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p className="description">Lorem ipsum dolor sit amet.</p>
       </header>
       <main>
         <div className="settings">
           <div className="settings-item">
             <GradientRadioGroup
-              value={selectedBackground}
-              onChange={(gradient) => setSelectedBackground(gradient)}
+              value={selectedGradient}
+              onChange={(gradient) => setSelectedGradient(gradient)}
             />
           </div>
           <div className="settings-item">
@@ -114,11 +99,31 @@ export default function Page() {
               Show line numbers
             </label>
           </div>
+          <div className="buttons">
+            <Button
+              onClick={async () => {
+                const blob = await getBlob();
+                navigator.clipboard.write([
+                  new ClipboardItem({ "image/png": blob }),
+                ]);
+              }}
+            >
+              Copy
+            </Button>
+            <Button
+              onClick={async () => {
+                const blob = await getBlob();
+                saveAs(blob, "test.png");
+              }}
+            >
+              Download
+            </Button>
+          </div>
         </div>
         <div id="to-be-exported">
           <div
             className="editor-stage"
-            style={{ background: `var(--gradient-${selectedBackground})` }}
+            style={{ background: selectedGradient }}
           >
             <div className="editor-wrapper">
               <div className="editor-header">

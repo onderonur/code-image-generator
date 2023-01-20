@@ -1,0 +1,21 @@
+.radiogroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.option {
+  cursor: pointer;
+}
+
+.gradientPreview {
+  --size: 20px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+}
+
+.gradientPreviewSelected {
+  border: 0.2rem solid rgb(67, 146, 172);
+}

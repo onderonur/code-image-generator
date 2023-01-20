@@ -1,0 +1,29 @@
+.option {
+  max-width: 17rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.editorWrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-medium);
+  position: relative;
+}
+
+.editorOverlay {
+  position: absolute;
+  inset: 0;
+}
+
+.editorWrapper :global(.cm-editor) {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.optionLabel {
+  text-align: center;
+  font-weight: 600;
+}

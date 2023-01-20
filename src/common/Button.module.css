@@ -1,0 +1,17 @@
+.button {
+  background-color: hsl(315 60% 40%);
+  color: inherit;
+  cursor: pointer;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--rounded-sm);
+}
+
+.button:hover {
+  background-color: hsl(315 60% 45%);
+}
+
+.button:active {
+  background-color: hsl(315 60% 50%);;
+}
+
+/* TODO: Outline for focus, active etc. */

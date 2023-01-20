@@ -2,7 +2,24 @@
   --button-size: 0.75rem;
   --header-padding: 1rem;
 
+  --color-body: hsl(0 0% 15%);
+  --color-body-light: hsl(0 0% 20%);
+  --color-body-lighter: hsl(0 0% 30%);
   --color-border: hsl(0, 0%, 50%);
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+
+  --rounded-sm: 0.25rem;
+  --rounded-md: 0.5rem;
+
+  --z-index-max: 9999;
 
   /* TODO: Shadow'lar mor. Düzelt */
   --shadow-color: 286deg 36% 56%;
@@ -33,12 +50,12 @@
   --gradient-7: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 55%, #ff99ac 100%);
   --gradient-8: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
 
-  --main-editor-padding: 2rem;
-  --main-editor-border-radius: 0.4rem;
+  --main-editor-padding: var(--spacing-8);
+  --main-editor-border-radius: var(--rounded-md);
 }
 
 body {
-  background-color: #222;
+  background-color: var(--color-body);
   color: #fff;
 }
 
