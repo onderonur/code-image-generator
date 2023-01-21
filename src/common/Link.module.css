@@ -1,3 +1,7 @@
 .link {
-  color: var(--color-primary-lighter);
+  color: var(--color-text-hint);
+}
+
+.link:hover {
+  color: var(--color-text-secondary);
 }

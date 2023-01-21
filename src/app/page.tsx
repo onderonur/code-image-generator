@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import Editor from "@/editor/Editor";
 import { gradients } from "@/settings/GradientRadioGroup";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import Settings, { SettingsValues } from "@/settings/Settings";
-import "./page.css";
 import Hero from "@/hero/Hero";
-import classNames from "classnames";
 import { BackgroundPadding } from "@/settings/BackgroundPaddingRadioGroup";
 import Link from "@/common/Link";
+import ExportableEditor, {
+  EXPORTABLE_EDITOR_ID,
+} from "@/editor/ExportableEditor";
+import styles from "./page.module.css";
 
 // TODO: 404 page vs ekle
 
@@ -33,7 +34,7 @@ export default function Counter() {
 }`;
 
 async function getBlob() {
-  const node = document.getElementById("to-be-exported");
+  const node = document.getElementById(EXPORTABLE_EDITOR_ID);
 
   if (!node) {
     throw new Error("Node can not be found");
@@ -53,16 +54,14 @@ export default function Page() {
     backgroundPadding: BackgroundPadding.MD,
   });
 
-  const isPaddingNone = settings.backgroundPadding === BackgroundPadding.NONE;
-
   return (
-    <div className="root">
+    <div className={styles.root}>
       <div>
         <header>
           <Hero />
         </header>
-        <main className="main">
-          <div className="settingsWrapper">
+        <main className={styles.main}>
+          <div className={styles.settingsWrapper}>
             <Settings
               values={settings}
               onChange={(newSettings) => setSettings(newSettings)}
@@ -78,60 +77,20 @@ export default function Page() {
               }}
             />
           </div>
-          <div id="to-be-exported" className="editor-stage-wrapper">
-            <div
-              className={classNames(
-                "background",
-                isPaddingNone && "backgroundPaddingNone"
-              )}
-              style={{
-                background: settings.gradient,
-              }}
-            />
-            <div
-              className={classNames(
-                "editor-stage",
-                settings.backgroundPadding === BackgroundPadding.XS &&
-                  "background-padding-xs",
-                settings.backgroundPadding === BackgroundPadding.SM &&
-                  "background-padding-sm",
-                settings.backgroundPadding === BackgroundPadding.MD &&
-                  "background-padding-md",
-                settings.backgroundPadding === BackgroundPadding.LG &&
-                  "background-padding-lg"
-              )}
-            >
-              <div
-                className={classNames(
-                  "editor-wrapper",
-                  isPaddingNone && "editorWrapperPaddingNone"
-                )}
-              >
-                <div className="editor-header">
-                  <div className="editor-header-buttons">
-                    <div className="editor-header-button editor-header-button-red" />
-                    <div className="editor-header-button editor-header-button-yellow" />
-                    <div className="editor-header-button editor-header-button-green" />
-                  </div>
-                </div>
-                <Editor
-                  language={settings.language.value}
-                  theme={settings.theme.value}
-                  basicSetup={{ lineNumbers: settings.lineNumbers }}
-                  value={defaultValue}
-                />
-              </div>
-            </div>
+          <div className={styles.exportableEditorWrapper}>
+            <ExportableEditor settings={settings} />
           </div>
         </main>
       </div>
-      <footer className="footer">
-        <Link
-          href="https://github.com/onderonur/code-image-generator"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <footer className={styles.footer}>
+        <Link href="https://twitter.com/onderonur_" isExternal>
+          Twitter
+        </Link>
+        <Link href="https://github.com/onderonur" isExternal>
           GitHub
+        </Link>
+        <Link href="https://www.linkedin.com/in/onderonur/" isExternal>
+          LinkedIn
         </Link>
       </footer>
     </div>
