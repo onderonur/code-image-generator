@@ -1,0 +1,19 @@
+.checkbox {
+  cursor: pointer;
+  user-select: none;
+  padding: var(--spacing-1);
+  border-radius: var(--rounded-sm);
+}
+
+.checkbox:hover {
+  background-color: var(--color-body-light);
+}
+
+.checkbox:active,
+.checkbox:focus {
+  background-color: var(--color-body-lighter);
+}
+
+.input {
+  margin-inline-end: var(--spacing-1);
+}

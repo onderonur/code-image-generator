@@ -1,19 +1,21 @@
+/* TODO: react-select styles are injected after our custom styles.
+So, we used `!important` as a temporary solution. */
 .control {
-  background-color: transparent;
+  background-color: transparent !important;
   cursor: pointer;
 }
 
 .input {
-  color: #fff;
+  color: var(--color-text-primary) !important;
 }
 
 .singleValue {
-  color: #fff;
+  color: var(--color-text-primary) !important;
 }
 
 .menu {
-  background-color: var(--color-body);
-  z-index: var(--z-index-max);
+  background-color: var(--color-body) !important;
+  z-index: var(--z-index-max) !important;
 }
 
 .option {
@@ -21,14 +23,13 @@
 }
 
 .optionFocused {
-  background-color: var(--color-body-light);
+  background-color: var(--color-body-light) !important;
 }
 
 .optionFocused:active {
-  background-color: var(--color-body-lighter);
+  background-color: var(--color-body-lighter) !important;
 }
 
 .optionSelected {
-  /* TODO: Fix */
-  background-color: var(--color-body-lighter);
+  background-color: var(--color-body-lighter) !important;
 }

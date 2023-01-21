@@ -24,7 +24,7 @@ export default function GradientRadioGroup({
 }: GradientRadioGroupProps) {
   return (
     <div role="radiogroup" className={styles.radiogroup}>
-      {gradients.map((gradient) => {
+      {gradients.map((gradient, i) => {
         const isSelected = value === gradient;
 
         return (
@@ -45,6 +45,7 @@ export default function GradientRadioGroup({
               checked={value === gradient}
               onChange={() => onChange(gradient)}
             />
+            <span className="sr-only">Gradient Background {i + 1}</span>
           </label>
         );
       })}

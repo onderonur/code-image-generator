@@ -1,0 +1,9 @@
+.settings {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--spacing-4);
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: var(--spacing-4);
+  border: 1px solid #fff;
+}

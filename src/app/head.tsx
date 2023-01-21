@@ -1,4 +1,5 @@
 export default function Head() {
+  // TODO: Search console ekle.
   return (
     <>
       <title>Code Image Generator</title>
@@ -6,5 +7,5 @@ export default function Head() {
       <meta name="description" content="TODO" />
       <link rel="icon" href="/favicon.ico" />
     </>
-  )
+  );
 }

@@ -2,7 +2,7 @@ import { components, OptionProps } from "react-select";
 import { themeNames } from "@/editor/EditorUtils";
 import { ThemeOption } from "@/editor/EditorTypes";
 import Editor from "@/editor/Editor";
-import BaseSelect from "@/common/BaseSelect";
+import BaseSelect, { BaseSelectProps } from "@/common/BaseSelect";
 import styles from "./ThemeSelect.module.css";
 
 const editorValue = `function example() {
@@ -31,10 +31,10 @@ function Option({ data, ...rest }: OptionProps<ThemeOption>) {
   );
 }
 
-type ThemeSelectProps = {
-  value: ThemeOption;
-  onChange: (value: ThemeOption | null) => void;
-};
+type ThemeSelectProps = Pick<
+  BaseSelectProps<ThemeOption>,
+  "inputId" | "value" | "onChange"
+>;
 
 export default function ThemeSelect({ value, onChange }: ThemeSelectProps) {
   return (

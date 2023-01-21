@@ -1,5 +1,6 @@
 .button {
-  background-color: hsl(315 60% 40%);
+  width: 100%;
+  background-color: var(--color-primary);
   color: inherit;
   cursor: pointer;
   padding: var(--spacing-2) var(--spacing-4);
@@ -7,11 +8,11 @@
 }
 
 .button:hover {
-  background-color: hsl(315 60% 45%);
+  background-color: var(--color-primary-light);
 }
 
 .button:active {
-  background-color: hsl(315 60% 50%);;
+  background-color: var(--color-primary-lighter);
 }
 
 /* TODO: Outline for focus, active etc. */

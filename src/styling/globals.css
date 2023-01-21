@@ -1,11 +1,22 @@
 :root {
-  --button-size: 0.75rem;
-  --header-padding: 1rem;
-
+  --color-primary: hsl(315 60% 45%);
+  --color-primary-light: hsl(315 60% 50%);
+  --color-primary-lighter: hsl(315 60% 55%);
   --color-body: hsl(0 0% 15%);
   --color-body-light: hsl(0 0% 20%);
   --color-body-lighter: hsl(0 0% 30%);
+  --color-red: hsl(1 100% 68%);
+  --color-yellow: hsl(39 100% 63%);
+  --color-green: hsl(143 100% 40%);
   --color-border: hsl(0, 0%, 50%);
+  --color-text-primary: hsl(0, 0%, 95%);
+  --color-text-secondary: hsl(0, 0%, 85%);
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
 
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -18,6 +29,7 @@
 
   --rounded-sm: 0.25rem;
   --rounded-md: 0.5rem;
+  --rounded-full: 9999px;
 
   --z-index-max: 9999;
 
@@ -39,24 +51,17 @@
     17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
     25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
 
-  /* TODO: Gradient'leri düzelt ve düzenle */
-  --gradient-0: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
-  --gradient-1: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
-  --gradient-2: linear-gradient(180deg, #52acff 25%, #ffe32c 100%);
-  --gradient-3: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
-  --gradient-4: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
-  --gradient-5: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
-  --gradient-6: linear-gradient(45deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
-  --gradient-7: linear-gradient(90deg, #ff9a8b 0%, #ff6a88 55%, #ff99ac 100%);
-  --gradient-8: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
-
+  --main-editor-header-padding: 1rem;
+  --main-editor-header-button-size: var(--spacing-3);
   --main-editor-padding: var(--spacing-8);
   --main-editor-border-radius: var(--rounded-md);
 }
 
 body {
   background-color: var(--color-body);
-  color: #fff;
+  color: var(--color-text-primary);
+  /* TODO: Bunun kullanımına bi bak. işe yaramıyo gibi şu an */
+  color-scheme: dark;
 }
 
 .sr-only {

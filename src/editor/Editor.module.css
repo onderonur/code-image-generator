@@ -1,4 +1,4 @@
 .editorSkeleton {
   min-height: 4rem;
-  background-color: hsl(0 0% 20%);
+  background-color: var(--color-body-light);
 }

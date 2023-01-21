@@ -3,7 +3,7 @@ import React, { useId } from "react";
 import styles from "./BaseSelect.module.css";
 import classNames from "classnames";
 
-type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
+export type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
   typeof Select<Option>
 >;
 
@@ -13,6 +13,7 @@ export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
   return (
     <Select<Option>
       instanceId={id}
+      menuShouldBlockScroll
       {...props}
       classNames={{
         control: () => styles.control,

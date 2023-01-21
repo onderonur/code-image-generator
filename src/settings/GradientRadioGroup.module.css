@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  padding-block: var(--spacing-1);
 }
 
 .option {
@@ -13,7 +14,7 @@
 
   width: var(--size);
   height: var(--size);
-  border-radius: 50%;
+  border-radius: var(--rounded-sm);
 }
 
 .gradientPreviewSelected {

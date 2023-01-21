@@ -1,15 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import ThemeSelect from "@/settings/ThemeSelect";
-import { LanguageOption, ThemeOption } from "@/editor/EditorTypes";
-import LanguageSelect from "@/settings/LanguageSelect";
 import Editor from "@/editor/Editor";
-import GradientRadioGroup, { gradients } from "@/settings/GradientRadioGroup";
+import { gradients } from "@/settings/GradientRadioGroup";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
-import Button from "@/common/Button";
+import Settings, { SettingsValues } from "@/settings/Settings";
 import "./page.css";
+import Hero from "@/hero/Hero";
 
 // TODO: 404 page vs ekle
 
@@ -44,86 +42,39 @@ async function getBlob() {
 }
 
 export default function Page() {
-  const [selectedTheme, setSelectedTheme] = useState<ThemeOption>({
-    value: "vscodeDark",
-    label: "vscodeDark",
+  const [settings, setSettings] = useState<SettingsValues>({
+    theme: { value: "vscodeDark", label: "vscodeDark" },
+    language: { value: "tsx", label: "tsx" },
+    lineNumbers: false,
+    gradient: gradients[0],
   });
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>({
-    value: "tsx",
-    label: "tsx",
-  });
-  const [lineNumbers, setLineNumbers] = useState(false);
-  const [selectedGradient, setSelectedGradient] = useState(gradients[0]);
 
   return (
     <div>
-      <header className="header">
-        <h1 className="title">Code Image Generator</h1>
-        <p className="description">Lorem ipsum dolor sit amet.</p>
+      <header>
+        <Hero />
       </header>
-      <main>
-        <div className="settings">
-          <div className="settings-item">
-            <GradientRadioGroup
-              value={selectedGradient}
-              onChange={(gradient) => setSelectedGradient(gradient)}
-            />
-          </div>
-          <div className="settings-item">
-            <LanguageSelect
-              value={selectedLanguage}
-              onChange={(language) => {
-                if (language) {
-                  setSelectedLanguage(language);
-                }
-              }}
-            />
-          </div>
-          <div className="settings-item">
-            <ThemeSelect
-              value={selectedTheme}
-              onChange={(theme) => {
-                if (theme) {
-                  setSelectedTheme(theme);
-                }
-              }}
-            />
-          </div>
-          <div className="settings-item">
-            <label>
-              <input
-                type="checkbox"
-                checked={lineNumbers}
-                onChange={(e) => setLineNumbers(e.target.checked)}
-              />
-              Show line numbers
-            </label>
-          </div>
-          <div className="buttons">
-            <Button
-              onClick={async () => {
-                const blob = await getBlob();
-                navigator.clipboard.write([
-                  new ClipboardItem({ "image/png": blob }),
-                ]);
-              }}
-            >
-              Copy
-            </Button>
-            <Button
-              onClick={async () => {
-                const blob = await getBlob();
-                saveAs(blob, "test.png");
-              }}
-            >
-              Download
-            </Button>
-          </div>
+      <main className="main">
+        <div className="settingsWrapper">
+          <Settings
+            values={settings}
+            onChange={(newSettings) => setSettings(newSettings)}
+            onCopy={async () => {
+              const blob = await getBlob();
+              navigator.clipboard.write([
+                new ClipboardItem({ "image/png": blob }),
+              ]);
+            }}
+            onDownload={async () => {
+              const blob = await getBlob();
+              saveAs(blob, "test.png");
+            }}
+          />
         </div>
         <div id="to-be-exported">
           <div
             className="editor-stage"
-            style={{ background: selectedGradient }}
+            style={{ background: settings.gradient }}
           >
             <div className="editor-wrapper">
               <div className="editor-header">
@@ -134,9 +85,9 @@ export default function Page() {
                 </div>
               </div>
               <Editor
-                language={selectedLanguage.value}
-                theme={selectedTheme.value}
-                basicSetup={{ lineNumbers }}
+                language={settings.language.value}
+                theme={settings.theme.value}
+                basicSetup={{ lineNumbers: settings.lineNumbers }}
                 value={defaultValue}
               />
             </div>
