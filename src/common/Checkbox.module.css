@@ -2,6 +2,7 @@
   cursor: pointer;
   user-select: none;
   padding: var(--spacing-1);
+  margin: 0;
   border-radius: var(--rounded-sm);
 }
 

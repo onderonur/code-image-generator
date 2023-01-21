@@ -1,3 +1,5 @@
+import Radio from "@/common/Radio";
+import RadioGroup from "@/common/RadioGroup";
 import classNames from "classnames";
 import styles from "./GradientRadioGroup.module.css";
 
@@ -23,12 +25,12 @@ export default function GradientRadioGroup({
   onChange,
 }: GradientRadioGroupProps) {
   return (
-    <div role="radiogroup" className={styles.radiogroup}>
+    <RadioGroup className={styles.radioGroup} value={value} onChange={onChange}>
       {gradients.map((gradient, i) => {
         const isSelected = value === gradient;
 
         return (
-          <label key={gradient} className={styles.option}>
+          <Radio key={gradient} value={gradient}>
             <div
               className={classNames(
                 styles.gradientPreview,
@@ -38,17 +40,10 @@ export default function GradientRadioGroup({
                 background: gradient,
               }}
             />
-            <input
-              type="radio"
-              className="sr-only"
-              value={gradient}
-              checked={value === gradient}
-              onChange={() => onChange(gradient)}
-            />
             <span className="sr-only">Gradient Background {i + 1}</span>
-          </label>
+          </Radio>
         );
       })}
-    </div>
+    </RadioGroup>
   );
 }

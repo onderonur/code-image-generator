@@ -1,5 +1,5 @@
 .divider {
   border: none;
   height: 1px;
-  background-color: var(--color-text-secondary);
+  background-color: var(--color-text-hint);
 }

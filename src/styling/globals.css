@@ -1,16 +1,22 @@
 :root {
-  --color-primary: hsl(315 60% 45%);
-  --color-primary-light: hsl(315 60% 50%);
-  --color-primary-lighter: hsl(315 60% 55%);
-  --color-body: hsl(0 0% 15%);
-  --color-body-light: hsl(0 0% 20%);
-  --color-body-lighter: hsl(0 0% 30%);
+  --color-primary: hsl(315 60% 50%);
+  --color-primary-light: hsl(315 60% 55%);
+  --color-primary-lighter: hsl(315 60% 60%);
+  --color-body: hsl(210 30% 10%);
+  --color-body-light: hsl(210 30% 20%);
+  --color-body-lighter: hsl(210 30% 30%);
   --color-red: hsl(1 100% 68%);
   --color-yellow: hsl(39 100% 63%);
   --color-green: hsl(143 100% 40%);
-  --color-border: hsl(0, 0%, 50%);
-  --color-text-primary: hsl(0, 0%, 95%);
-  --color-text-secondary: hsl(0, 0%, 85%);
+  --color-border: hsl(0 0% 100%);
+  --color-text-primary: hsl(0 0% 95%);
+  --color-text-secondary: hsl(0 0% 85%);
+  --color-text-hint: hsl(0 0% 65%);
+
+  --font-size-sm: 0.75rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 3rem;
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -26,6 +32,18 @@
   --spacing-6: 1.5rem;
   --spacing-7: 1.75rem;
   --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-13: 3.25rem;
+  --spacing-14: 3.5rem;
+  --spacing-15: 3.75rem;
+  --spacing-16: 4rem;
+  --spacing-17: 4.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-19: 4.75rem;
+  --spacing-20: 5rem;
 
   --rounded-sm: 0.25rem;
   --rounded-md: 0.5rem;
@@ -33,23 +51,9 @@
 
   --z-index-max: 9999;
 
-  /* TODO: Shadow'lar mor. Düzelt */
-  --shadow-color: 286deg 36% 56%;
-  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
-    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-sm: 0.1rem 0.1rem 0.25rem hsl(0 0% 0% / 0.1);
+  --shadow-md: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0.5rem 0.5rem 0.75rem hsl(0 0% 0% / 0.1);
 
   --main-editor-header-padding: 1rem;
   --main-editor-header-button-size: var(--spacing-3);

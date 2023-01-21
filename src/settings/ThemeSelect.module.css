@@ -9,7 +9,7 @@
 .editorWrapper {
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--shadow-md);
   position: relative;
 }
 
@@ -20,7 +20,7 @@
 
 .editorWrapper :global(.cm-editor) {
   padding: 0.5rem;
-  font-size: 0.7rem;
+  font-size: var(--font-size-sm);
 }
 
 .optionLabel {

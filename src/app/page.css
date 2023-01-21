@@ -1,11 +1,40 @@
+.editor-stage-wrapper {
+  position: relative;
+}
+
 /* TODO: Bunun ismi değiştirilebilir. */
 .editor-stage {
   background-repeat: no-repeat;
-  padding: var(--spacing-8);
   width: fit-content;
-  min-width: 12rem;
+  min-width: 16rem;
   margin-inline: auto;
-  max-width: 54rem;
+  transition: padding 300ms ease-in-out;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.backgroundPaddingNone {
+  opacity: 0;
+}
+
+.background-padding-xs {
+  padding: var(--spacing-8);
+}
+
+.background-padding-sm {
+  padding: var(--spacing-12);
+}
+
+.background-padding-md {
+  padding: var(--spacing-16);
+}
+
+.background-padding-lg {
+  padding: var(--spacing-20);
 }
 
 .main {
@@ -14,6 +43,7 @@
   gap: var(--spacing-2);
   padding: var(--spacing-2);
   margin-inline: auto;
+  max-width: 70rem;
 }
 
 .settingsWrapper {
@@ -28,7 +58,12 @@
   border-radius: var(--main-editor-border-radius);
   overflow: hidden;
   position: relative;
-  box-shadow: var(--shadow-elevation-medium);
+  transition: box-shadow 300ms ease-in-out;
+  box-shadow: var(--shadow-md);
+}
+
+.editorWrapperPaddingNone {
+  box-shadow: none;
 }
 
 .editor-header {
@@ -40,7 +75,7 @@
 
 .editor-header-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
 }
 
 .editor-header-button {
@@ -67,10 +102,15 @@
     2 * var(--main-editor-header-padding) +
       var(--main-editor-header-button-size) + 0.5rem
   );
-  font-size: 1rem;
+  font-size: var(--font-size-md);
 }
 
 .buttons {
   display: flex;
   gap: var(--spacing-1);
+}
+
+.footer {
+  padding-block: var(--spacing-10);
+  text-align: center;
 }

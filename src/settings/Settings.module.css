@@ -5,5 +5,5 @@
   flex-direction: column;
   flex-wrap: wrap;
   padding: var(--spacing-4);
-  border: 1px solid #fff;
+  border: 1px solid var(--color-border);
 }

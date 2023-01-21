@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className={styles.hero}>
       <h1 className={styles.title}>Code Image Generator</h1>
-      <p className={styles.description}>Lorem ipsum dolor sit amet.</p>
+      <p className={styles.description}>TODO: Lorem ipsum dolor sit amet.</p>
     </div>
   );
 }

@@ -5,14 +5,18 @@ import GradientRadioGroup from "@/settings/GradientRadioGroup";
 import Button from "@/common/Button";
 import Label from "@/common/Label";
 import Divider from "@/common/Divider";
-import styles from "./Settings.module.css";
 import Checkbox from "@/common/Checkbox";
+import BackgroundPaddingRadioGroup, {
+  BackgroundPadding,
+} from "./BackgroundPaddingRadioGroup";
+import styles from "./Settings.module.css";
 
 export type SettingsValues = {
   theme: ThemeOption;
   language: LanguageOption;
   lineNumbers: boolean;
   gradient: string;
+  backgroundPadding: BackgroundPadding;
 };
 
 type SettingsProps = {
@@ -61,6 +65,15 @@ export default function Settings({
           inputId="theme-select"
           value={values.theme}
           onChange={(theme) => theme && handleChange("theme", theme)}
+        />
+      </div>
+      <div>
+        <Label>Padding</Label>
+        <BackgroundPaddingRadioGroup
+          value={values.backgroundPadding}
+          onChange={(newBackgroundPadding) =>
+            handleChange("backgroundPadding", newBackgroundPadding)
+          }
         />
       </div>
       <div>

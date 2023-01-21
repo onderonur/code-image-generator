@@ -4,12 +4,12 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-black);
   margin-block-end: 0.5rem;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
 }

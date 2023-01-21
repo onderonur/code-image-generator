@@ -1,7 +1,7 @@
 import Select from "react-select";
 import React, { useId } from "react";
-import styles from "./BaseSelect.module.css";
 import classNames from "classnames";
+import styles from "./BaseSelect.module.css";
 
 export type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
   typeof Select<Option>
