@@ -54,6 +54,8 @@
   --shadow-sm: 0.1rem 0.1rem 0.25rem hsl(0 0% 0% / 0.1);
   --shadow-md: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.1);
   --shadow-lg: 0.5rem 0.5rem 0.75rem hsl(0 0% 0% / 0.1);
+  --shadow-popper: hsla(206, 15%, 60%, 0.2) 0px 0px 15px,
+    hsla(206, 15%, 60%, 0.15) 0px 0px 3px 1px;
 
   --main-editor-header-padding: 1rem;
   --main-editor-header-button-size: var(--spacing-3);

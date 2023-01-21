@@ -16,6 +16,7 @@ So, we used `!important` as a temporary solution. */
 .menu {
   background-color: var(--color-body) !important;
   z-index: var(--z-index-max) !important;
+  box-shadow: var(--shadow-popper) !important;
 }
 
 .option {
