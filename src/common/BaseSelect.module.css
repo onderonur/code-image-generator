@@ -27,6 +27,7 @@ So, we used `!important` as a temporary solution. */
   background-color: var(--color-body-light) !important;
 }
 
+.option:active,
 .optionFocused:active {
   background-color: var(--color-body-lighter) !important;
 }

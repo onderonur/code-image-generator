@@ -15,8 +15,7 @@
   max-width: 15rem;
 }
 
-/* TODO: Breakpoint'leri ayarla ve CSS vars'a taşı. */
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .settingsWrapper {
     display: block;
   }

@@ -5,3 +5,7 @@
 .link:hover {
   color: var(--color-text-secondary);
 }
+
+.link:active {
+  color: var(--color-text);
+}

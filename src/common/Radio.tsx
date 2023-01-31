@@ -2,17 +2,18 @@ import { useRadioGroupContext } from './RadioGroupContext';
 import classNames from 'classnames';
 import styles from './Radio.module.css';
 
-type RadioProps = React.PropsWithChildren<{
+export type RadioValue = string | number;
+
+type RadioProps<Value extends RadioValue> = React.PropsWithChildren<{
   className?: string;
-  // TODO: Bu radio, radiogroup vs'lerin value type'larını düzelt.
-  value: string;
+  value: Value;
 }>;
 
-export default function Radio({
+export default function Radio<Value extends RadioValue>({
   className,
   value: optionValue,
   children,
-}: RadioProps) {
+}: RadioProps<Value>) {
   const { value, onChange } = useRadioGroupContext();
 
   return (

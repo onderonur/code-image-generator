@@ -2,15 +2,15 @@
   max-width: 17rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
   cursor: pointer;
 }
 
 .editorWrapper {
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border-radius: var(--rounded-md);
   box-shadow: var(--shadow-md);
   position: relative;
+  overflow: hidden;
 }
 
 .editorOverlay {
@@ -19,7 +19,7 @@
 }
 
 .editorWrapper :global(.cm-editor) {
-  padding: 0.5rem;
+  gap: var(--spacing-2);
   font-size: var(--font-size-sm);
 }
 

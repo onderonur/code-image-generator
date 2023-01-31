@@ -9,7 +9,6 @@ const editorValue = `function example() {
   console.log("Hi");
 }`;
 
-// TODO: option içindeki editor'e tıklayınca menu kapanıyor ama option seçili olmuyor.
 function Option({ data, ...rest }: OptionProps<ThemeOption>) {
   return (
     <components.Option data={data} {...rest}>

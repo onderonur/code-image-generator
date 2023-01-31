@@ -14,5 +14,3 @@
 .button:active {
   background-color: var(--color-primary-lighter);
 }
-
-/* TODO: Outline for focus, active etc. */

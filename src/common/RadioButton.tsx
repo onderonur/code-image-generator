@@ -1,15 +1,16 @@
 import { useRadioGroupContext } from './RadioGroupContext';
 import classNames from 'classnames';
+import { RadioValue } from './Radio';
 import styles from './RadioButton.module.css';
 
-type RadioButtonProps = React.PropsWithChildren<{
-  value: string | number;
+type RadioButtonProps<Value extends RadioValue> = React.PropsWithChildren<{
+  value: Value;
 }>;
 
-export default function RadioButton({
+export default function RadioButton<Value extends RadioValue>({
   value: optionValue,
   children,
-}: RadioButtonProps) {
+}: RadioButtonProps<Value>) {
   const { value, onChange } = useRadioGroupContext();
   const isChecked = optionValue === value;
 

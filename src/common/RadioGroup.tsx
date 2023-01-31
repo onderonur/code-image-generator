@@ -1,14 +1,15 @@
 import RadioGroupProvider from './RadioGroupContext';
-import styles from './RadioGroup.module.css';
+import { RadioValue } from './Radio';
 import classNames from 'classnames';
+import styles from './RadioGroup.module.css';
 
-type RadioGroupProps<Value> = React.PropsWithChildren<{
+type RadioGroupProps<Value extends RadioValue> = React.PropsWithChildren<{
   className?: string;
   value: Value;
   onChange: (value: Value) => void;
 }>;
 
-export default function RadioGroup<Value>({
+export default function RadioGroup<Value extends RadioValue>({
   className,
   value,
   children,
