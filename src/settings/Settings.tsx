@@ -1,15 +1,15 @@
-import ThemeSelect from "@/settings/ThemeSelect";
-import { LanguageOption, ThemeOption } from "@/editor/EditorTypes";
-import LanguageSelect from "@/settings/LanguageSelect";
-import GradientRadioGroup from "@/settings/GradientRadioGroup";
-import Button from "@/common/Button";
-import Label from "@/common/Label";
-import Divider from "@/common/Divider";
-import Checkbox from "@/common/Checkbox";
+import ThemeSelect from '@/settings/ThemeSelect';
+import { LanguageOption, ThemeOption } from '@/editor/EditorTypes';
+import LanguageSelect from '@/settings/LanguageSelect';
+import GradientRadioGroup from '@/settings/GradientRadioGroup';
+import Button from '@/common/Button';
+import Label from '@/common/Label';
+import Divider from '@/common/Divider';
+import Checkbox from '@/common/Checkbox';
 import BackgroundPaddingRadioGroup, {
   BackgroundPadding,
-} from "./BackgroundPaddingRadioGroup";
-import styles from "./Settings.module.css";
+} from './BackgroundPaddingRadioGroup';
+import styles from './Settings.module.css';
 
 export type SettingsValues = {
   theme: ThemeOption;
@@ -34,7 +34,7 @@ export default function Settings({
 }: SettingsProps) {
   function handleChange<Key extends keyof SettingsValues>(
     key: Key,
-    value: SettingsValues[Key]
+    value: SettingsValues[Key],
   ) {
     const newValues = { ...values, [key]: value };
     onChange(newValues);
@@ -46,7 +46,7 @@ export default function Settings({
         <Label>Background</Label>
         <GradientRadioGroup
           value={values.gradient}
-          onChange={(gradient) => handleChange("gradient", gradient)}
+          onChange={(gradient) => handleChange('gradient', gradient)}
         />
       </div>
       <div>
@@ -55,7 +55,7 @@ export default function Settings({
           inputId="language-select"
           value={values.language}
           onChange={(language) =>
-            language && handleChange("language", language)
+            language && handleChange('language', language)
           }
         />
       </div>
@@ -64,7 +64,7 @@ export default function Settings({
         <ThemeSelect
           inputId="theme-select"
           value={values.theme}
-          onChange={(theme) => theme && handleChange("theme", theme)}
+          onChange={(theme) => theme && handleChange('theme', theme)}
         />
       </div>
       <div>
@@ -72,14 +72,14 @@ export default function Settings({
         <BackgroundPaddingRadioGroup
           value={values.backgroundPadding}
           onChange={(newBackgroundPadding) =>
-            handleChange("backgroundPadding", newBackgroundPadding)
+            handleChange('backgroundPadding', newBackgroundPadding)
           }
         />
       </div>
       <div>
         <Checkbox
           checked={values.lineNumbers}
-          onChange={(e) => handleChange("lineNumbers", e.target.checked)}
+          onChange={(e) => handleChange('lineNumbers', e.target.checked)}
         >
           Show line numbers
         </Checkbox>

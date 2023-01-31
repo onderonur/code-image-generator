@@ -1,7 +1,7 @@
-import Select from "react-select";
-import React, { useId } from "react";
-import classNames from "classnames";
-import styles from "./BaseSelect.module.css";
+import Select from 'react-select';
+import React, { useId } from 'react';
+import classNames from 'classnames';
+import styles from './BaseSelect.module.css';
 
 export type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
   typeof Select<Option>
@@ -23,7 +23,7 @@ export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
           classNames(
             styles.option,
             isSelected && styles.optionSelected,
-            isFocused && styles.optionFocused
+            isFocused && styles.optionFocused,
           ),
         menu: () => styles.menu,
       }}

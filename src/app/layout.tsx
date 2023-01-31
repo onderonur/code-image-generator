@@ -1,8 +1,8 @@
-import { Inter } from "@next/font/google";
-import "@/styling/reset.css";
-import "@/styling/globals.css";
+import { Inter } from '@next/font/google';
+import '@/styling/reset.css';
+import '@/styling/globals.css';
 
-const font = Inter({ subsets: ["latin"] });
+const font = Inter({ subsets: ['latin'] });
 
 type RootLayoutProps = React.PropsWithChildren;
 

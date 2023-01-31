@@ -1,5 +1,5 @@
-import { langNames, LanguageName } from "@uiw/codemirror-extensions-langs";
-import BaseSelect, { BaseSelectProps } from "@/common/BaseSelect";
+import { langNames, LanguageName } from '@uiw/codemirror-extensions-langs';
+import BaseSelect, { BaseSelectProps } from '@/common/BaseSelect';
 
 type LanguageOption = { value: LanguageName; label: LanguageName };
 
@@ -9,7 +9,7 @@ const languageOptions: LanguageOption[] = [...langNames]
 
 type LanguageSelectProps = Pick<
   BaseSelectProps<LanguageOption>,
-  "inputId" | "value" | "onChange"
+  'inputId' | 'value' | 'onChange'
 >;
 
 export default function LanguageSelect(props: LanguageSelectProps) {

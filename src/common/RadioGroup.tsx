@@ -1,6 +1,6 @@
-import RadioGroupProvider from "./RadioGroupContext";
-import styles from "./RadioGroup.module.css";
-import classNames from "classnames";
+import RadioGroupProvider from './RadioGroupContext';
+import styles from './RadioGroup.module.css';
+import classNames from 'classnames';
 
 type RadioGroupProps<Value> = React.PropsWithChildren<{
   className?: string;

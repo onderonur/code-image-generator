@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
-import { gradients } from "@/settings/GradientRadioGroup";
-import { saveAs } from "file-saver";
-import Settings, { SettingsValues } from "@/settings/Settings";
-import Hero from "@/hero/Hero";
-import { BackgroundPadding } from "@/settings/BackgroundPaddingRadioGroup";
-import Link from "@/common/Link";
-import ExportableEditor from "@/editor/ExportableEditor";
-import html2canvas from "html2canvas";
-import styles from "./page.module.css";
+import { useRef, useState } from 'react';
+import { gradients } from '@/settings/GradientRadioGroup';
+import { saveAs } from 'file-saver';
+import Settings, { SettingsValues } from '@/settings/Settings';
+import Hero from '@/hero/Hero';
+import { BackgroundPadding } from '@/settings/BackgroundPaddingRadioGroup';
+import Link from '@/common/Link';
+import ExportableEditor from '@/editor/ExportableEditor';
+import html2canvas from 'html2canvas';
+import styles from './page.module.css';
 
 // TODO: 404 page vs ekle
 
 export default function Page() {
   const [settings, setSettings] = useState<SettingsValues>({
-    theme: { value: "vscodeDark", label: "vscodeDark" },
-    language: { value: "tsx", label: "tsx" },
+    theme: { value: 'vscodeDark', label: 'vscodeDark' },
+    language: { value: 'tsx', label: 'tsx' },
     lineNumbers: false,
     gradient: gradients[0],
     backgroundPadding: BackgroundPadding.MD,
@@ -28,7 +28,7 @@ export default function Page() {
     const editor = editorRef.current;
 
     if (!editor) {
-      throw new Error("Editor node can not be found");
+      throw new Error('Editor node can not be found');
     }
 
     const canvas = await html2canvas(editor);
@@ -38,7 +38,7 @@ export default function Page() {
         if (blob) {
           resolve(blob);
         } else {
-          reject(new Error("Blob not found"));
+          reject(new Error('Blob not found'));
         }
       });
     });
@@ -58,12 +58,12 @@ export default function Page() {
               onCopy={async () => {
                 const blob = await getBlob();
                 navigator.clipboard.write([
-                  new ClipboardItem({ "image/png": blob }),
+                  new ClipboardItem({ 'image/png': blob }),
                 ]);
               }}
               onDownload={async () => {
                 const blob = await getBlob();
-                saveAs(blob, "code-image-generator.png");
+                saveAs(blob, 'code-image-generator.png');
               }}
             />
           </div>

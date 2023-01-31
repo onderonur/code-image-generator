@@ -1,9 +1,9 @@
-import React from "react";
-import Editor from "@/editor/Editor";
-import { SettingsValues } from "@/settings/Settings";
-import { BackgroundPadding } from "@/settings/BackgroundPaddingRadioGroup";
-import classNames from "classnames";
-import styles from "./ExportableEditor.module.css";
+import React from 'react';
+import Editor from '@/editor/Editor';
+import { SettingsValues } from '@/settings/Settings';
+import { BackgroundPadding } from '@/settings/BackgroundPaddingRadioGroup';
+import classNames from 'classnames';
+import styles from './ExportableEditor.module.css';
 
 const defaultValue = `import { useState } from "react";
 
@@ -38,7 +38,7 @@ const ExportableEditor = React.forwardRef<
       <div
         className={classNames(
           styles.background,
-          isPaddingNone && styles.backgroundHidden
+          isPaddingNone && styles.backgroundHidden,
         )}
         style={{
           background: settings.gradient,
@@ -54,13 +54,13 @@ const ExportableEditor = React.forwardRef<
           settings.backgroundPadding === BackgroundPadding.MD &&
             styles.editorStagePaddingMd,
           settings.backgroundPadding === BackgroundPadding.LG &&
-            styles.editorStagePaddingLg
+            styles.editorStagePaddingLg,
         )}
       >
         <div
           className={classNames(
             styles.editorWrapper,
-            isPaddingNone && styles.editorWrapperPaddingNone
+            isPaddingNone && styles.editorWrapperPaddingNone,
           )}
         >
           <div className={styles.header}>
@@ -68,19 +68,19 @@ const ExportableEditor = React.forwardRef<
               <div
                 className={classNames(
                   styles.headerButton,
-                  styles.headerButtonRed
+                  styles.headerButtonRed,
                 )}
               />
               <div
                 className={classNames(
                   styles.headerButton,
-                  styles.headerButtonYellow
+                  styles.headerButtonYellow,
                 )}
               />
               <div
                 className={classNames(
                   styles.headerButton,
-                  styles.headerButtonGreen
+                  styles.headerButtonGreen,
                 )}
               />
             </div>
