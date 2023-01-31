@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-console": "warn",
+    "no-alert": "warn",
+    "prefer-destructuring": "warn",
+    "prefer-const": "warn",
+    "object-shorthand": "warn",
+    "curly": "warn"
+  }
 }

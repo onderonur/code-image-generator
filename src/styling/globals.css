@@ -69,10 +69,9 @@ html {
 }
 
 body {
+  color-scheme: dark;
   background-color: var(--color-body);
   color: var(--color-text-primary);
-  /* TODO: Bunun kullanımına bi bak. işe yaramıyo gibi şu an */
-  color-scheme: dark;
 }
 
 .sr-only {

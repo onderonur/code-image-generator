@@ -1,49 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { gradients } from "@/settings/GradientRadioGroup";
-import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import Settings, { SettingsValues } from "@/settings/Settings";
 import Hero from "@/hero/Hero";
 import { BackgroundPadding } from "@/settings/BackgroundPaddingRadioGroup";
 import Link from "@/common/Link";
-import ExportableEditor, {
-  EXPORTABLE_EDITOR_ID,
-} from "@/editor/ExportableEditor";
+import ExportableEditor from "@/editor/ExportableEditor";
+import html2canvas from "html2canvas";
 import styles from "./page.module.css";
 
 // TODO: 404 page vs ekle
-
-const defaultValue = `import { useState } from "react";
-
-export default function Counter() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>Count is: {count}</p>
-      <button onClick={(e) => setCount((current) => current + 1)}>
-        Increase
-      </button>
-      <button onClick={(e) => setCount((current) => current - 1)}>
-        Decrease
-      </button>
-    </div>
-  );
-}`;
-
-async function getBlob() {
-  const node = document.getElementById(EXPORTABLE_EDITOR_ID);
-
-  if (!node) {
-    throw new Error("Node can not be found");
-  }
-
-  const blob = await domtoimage.toBlob(node);
-
-  return blob;
-}
 
 export default function Page() {
   const [settings, setSettings] = useState<SettingsValues>({
@@ -53,6 +21,28 @@ export default function Page() {
     gradient: gradients[0],
     backgroundPadding: BackgroundPadding.MD,
   });
+
+  const editorRef = useRef<HTMLDivElement>(null);
+
+  async function getBlob() {
+    const editor = editorRef.current;
+
+    if (!editor) {
+      throw new Error("Editor node can not be found");
+    }
+
+    const canvas = await html2canvas(editor);
+
+    return new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          resolve(blob);
+        } else {
+          reject(new Error("Blob not found"));
+        }
+      });
+    });
+  }
 
   return (
     <div className={styles.root}>
@@ -73,12 +63,12 @@ export default function Page() {
               }}
               onDownload={async () => {
                 const blob = await getBlob();
-                saveAs(blob, "test.png");
+                saveAs(blob, "code-image-generator.png");
               }}
             />
           </div>
           <div className={styles.exportableEditorWrapper}>
-            <ExportableEditor settings={settings} />
+            <ExportableEditor ref={editorRef} settings={settings} />
           </div>
         </main>
       </div>
