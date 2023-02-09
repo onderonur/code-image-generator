@@ -1,6 +1,0 @@
-.label {
-  display: block;
-  margin-block-end: var(--spacing-1);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-}

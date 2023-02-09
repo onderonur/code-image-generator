@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import styles from './Link.module.css';
 
 type LinkProps = React.ComponentPropsWithoutRef<'a'> & {
   isExternal?: boolean;
@@ -14,7 +13,10 @@ export default function Link({
 }: LinkProps) {
   return (
     <a
-      className={classNames(className, styles.link)}
+      className={classNames(
+        className,
+        'underline text-text-400 hover:text-text-300 active:text-text-200',
+      )}
       target={isExternal ? '_blank' : target}
       rel={isExternal ? 'noopener noreferrer' : rel}
       {...rest}

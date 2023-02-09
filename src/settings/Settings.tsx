@@ -9,7 +9,6 @@ import Checkbox from '@/common/Checkbox';
 import BackgroundPaddingRadioGroup, {
   BackgroundPadding,
 } from './BackgroundPaddingRadioGroup';
-import styles from './Settings.module.css';
 
 export type SettingsValues = {
   theme: ThemeOption;
@@ -41,7 +40,7 @@ export default function Settings({
   }
 
   return (
-    <div className={styles.settings}>
+    <div className="flex flex-col gap-4 p-4 border-2">
       <div>
         <Label>Background</Label>
         <GradientRadioGroup
@@ -85,8 +84,12 @@ export default function Settings({
         </Checkbox>
       </div>
       <Divider />
-      <Button onClick={onCopy}>Copy</Button>
-      <Button onClick={onDownload}>Download</Button>
+      <Button isFullWidth onClick={onCopy}>
+        Copy
+      </Button>
+      <Button isFullWidth onClick={onDownload}>
+        Download
+      </Button>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Editor from '@/editor/Editor';
 import { SettingsValues } from '@/settings/Settings';
 import { BackgroundPadding } from '@/settings/BackgroundPaddingRadioGroup';
 import classNames from 'classnames';
-import styles from './ExportableEditor.module.css';
 
 const defaultValue = `import { useState } from "react";
 
@@ -34,11 +33,11 @@ const ExportableEditor = React.forwardRef<
   const isPaddingNone = settings.backgroundPadding === BackgroundPadding.NONE;
 
   return (
-    <div ref={ref} className={styles.root}>
+    <div ref={ref} className="relative w-fit mx-auto">
       <div
         className={classNames(
-          styles.background,
-          isPaddingNone && styles.backgroundHidden,
+          'absolute inset-0 transition-opacity duration-300',
+          isPaddingNone && 'opacity-0',
         )}
         style={{
           background: settings.gradient,
@@ -46,42 +45,26 @@ const ExportableEditor = React.forwardRef<
       />
       <div
         className={classNames(
-          styles.editorStage,
-          settings.backgroundPadding === BackgroundPadding.XS &&
-            styles.editorStagePaddingXs,
-          settings.backgroundPadding === BackgroundPadding.SM &&
-            styles.editorStagePaddingSm,
-          settings.backgroundPadding === BackgroundPadding.MD &&
-            styles.editorStagePaddingMd,
-          settings.backgroundPadding === BackgroundPadding.LG &&
-            styles.editorStagePaddingLg,
+          "bg-no-repeat w-fit min-w-[theme('spacing.64')] mx-auto transition-all duration-300",
+          settings.backgroundPadding === BackgroundPadding.XS && 'p-8',
+          settings.backgroundPadding === BackgroundPadding.SM && 'p-12',
+          settings.backgroundPadding === BackgroundPadding.MD && 'p-16',
+          settings.backgroundPadding === BackgroundPadding.LG && 'p-20',
         )}
       >
         <div
           className={classNames(
-            styles.editorWrapper,
-            isPaddingNone && styles.editorWrapperPaddingNone,
+            'mx-auto rounded-md overflow-hidden relative transition-shadow duration-300 shadow-md',
+            isPaddingNone && 'shadow-none',
+            '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12 [&_.cm-editor]:text-md',
           )}
         >
-          <div className={styles.header}>
-            <div className={styles.headerButtons}>
+          <div className="absolute w-full z-10 py-4 px-6">
+            <div className="flex gap-2">
+              <div className={classNames('w-3 h-3 rounded-full', 'bg-error')} />
+              <div className={classNames('w-3 h-3 rounded-full', 'bg-alert')} />
               <div
-                className={classNames(
-                  styles.headerButton,
-                  styles.headerButtonRed,
-                )}
-              />
-              <div
-                className={classNames(
-                  styles.headerButton,
-                  styles.headerButtonYellow,
-                )}
-              />
-              <div
-                className={classNames(
-                  styles.headerButton,
-                  styles.headerButtonGreen,
-                )}
+                className={classNames('w-3 h-3 rounded-full', 'bg-success')}
               />
             </div>
           </div>

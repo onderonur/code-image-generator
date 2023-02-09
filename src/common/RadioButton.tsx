@@ -1,7 +1,6 @@
 import { useRadioGroupContext } from './RadioGroupContext';
 import classNames from 'classnames';
 import { RadioValue } from './Radio';
-import styles from './RadioButton.module.css';
 
 type RadioButtonProps<Value extends RadioValue> = React.PropsWithChildren<{
   value: Value;
@@ -16,7 +15,11 @@ export default function RadioButton<Value extends RadioValue>({
 
   return (
     <label
-      className={classNames(styles.radioButton, isChecked && styles.checked)}
+      className={classNames(
+        'cursor-pointer py-1 px-2 border-2 border-r-0 last:border-r-2 border-primary-600',
+        isChecked && 'bg-primary-600',
+        'first:rounded-tl-sm first:rounded-bl-sm last:rounded-tr-sm last:rounded-br-sm',
+      )}
     >
       <input
         type="radio"

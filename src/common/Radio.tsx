@@ -1,6 +1,5 @@
 import { useRadioGroupContext } from './RadioGroupContext';
 import classNames from 'classnames';
-import styles from './Radio.module.css';
 
 export type RadioValue = string | number;
 
@@ -17,7 +16,7 @@ export default function Radio<Value extends RadioValue>({
   const { value, onChange } = useRadioGroupContext();
 
   return (
-    <label className={classNames(styles.radio, className)}>
+    <label className={classNames('cursor-pointer', className)}>
       <input
         type="radio"
         className="sr-only"

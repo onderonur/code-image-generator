@@ -1,89 +1,14 @@
-:root {
-  --color-primary: hsl(315 60% 50%);
-  --color-primary-light: hsl(315 60% 55%);
-  --color-primary-lighter: hsl(315 60% 60%);
-  --color-body: hsl(210 30% 10%);
-  --color-body-light: hsl(210 30% 20%);
-  --color-body-lighter: hsl(210 30% 30%);
-  --color-red: hsl(1 100% 68%);
-  --color-yellow: hsl(39 100% 63%);
-  --color-green: hsl(143 100% 40%);
-  --color-border: hsl(0 0% 100%);
-  --color-text-primary: hsl(0 0% 95%);
-  --color-text-secondary: hsl(0 0% 85%);
-  --color-text-hint: hsl(0 0% 65%);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --font-size-sm: 0.75rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 3rem;
+@layer base {
+  html {
+    /* fluid font-size: 14px - 16px for 640px - 1024px viewport */
+    font-size: clamp(0.875rem, 0.667rem + 0.52vw, 1rem);
+  }
 
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
-
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
-  --spacing-8: 2rem;
-  --spacing-9: 2.25rem;
-  --spacing-10: 2.5rem;
-  --spacing-11: 2.75rem;
-  --spacing-12: 3rem;
-  --spacing-13: 3.25rem;
-  --spacing-14: 3.5rem;
-  --spacing-15: 3.75rem;
-  --spacing-16: 4rem;
-  --spacing-17: 4.25rem;
-  --spacing-18: 4.5rem;
-  --spacing-19: 4.75rem;
-  --spacing-20: 5rem;
-
-  --rounded-sm: 0.25rem;
-  --rounded-md: 0.5rem;
-  --rounded-full: 9999px;
-
-  --z-index-max: 9999;
-
-  --shadow-sm: 0.1rem 0.1rem 0.25rem hsl(0 0% 0% / 0.1);
-  --shadow-md: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0.5rem 0.5rem 0.75rem hsl(0 0% 0% / 0.1);
-  --shadow-popper: hsla(206, 15%, 60%, 0.2) 0px 0px 15px,
-    hsla(206, 15%, 60%, 0.15) 0px 0px 3px 1px;
-
-  --screen-md: 768px;
-
-  --main-editor-header-padding: 1rem;
-  --main-editor-header-button-size: var(--spacing-3);
-  --main-editor-padding: var(--spacing-8);
-  --main-editor-border-radius: var(--rounded-md);
-}
-
-html {
-  /* fluid font-size: 14px - 16px for 640px - 1024px viewport */
-  font-size: clamp(0.875rem, 0.667rem + 0.52vw, 1rem);
-}
-
-body {
-  color-scheme: dark;
-  background-color: var(--color-body);
-  color: var(--color-text-primary);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  body {
+    color-scheme: dark;
+  }
 }

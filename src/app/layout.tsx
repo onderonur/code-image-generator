@@ -1,5 +1,4 @@
 import { Inter } from '@next/font/google';
-import '@/styling/reset.css';
 import '@/styling/globals.css';
 
 const font = Inter({ subsets: ['latin'] });
@@ -14,7 +13,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className="bg-body-900 text-white">{children}</body>
     </html>
   );
 }

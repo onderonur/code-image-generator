@@ -1,7 +1,6 @@
 import Radio from '@/common/Radio';
 import RadioGroup from '@/common/RadioGroup';
 import classNames from 'classnames';
-import styles from './GradientRadioGroup.module.css';
 
 export const gradients = [
   'linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)',
@@ -25,7 +24,11 @@ export default function GradientRadioGroup({
   onChange,
 }: GradientRadioGroupProps) {
   return (
-    <RadioGroup className={styles.radioGroup} value={value} onChange={onChange}>
+    <RadioGroup
+      className="flex flex-wrap gap-1"
+      value={value}
+      onChange={onChange}
+    >
       {gradients.map((gradient, i) => {
         const isSelected = value === gradient;
 
@@ -33,14 +36,18 @@ export default function GradientRadioGroup({
           <Radio key={gradient} value={gradient}>
             <div
               className={classNames(
-                styles.gradientPreview,
-                isSelected && styles.gradientPreviewSelected,
+                'w-6 h-6 rounded-md overflow-hidden',
+                isSelected && 'border-2 border-primary-500 p-1',
               )}
-              style={{
-                background: gradient,
-              }}
-            />
-            <span className="sr-only">Gradient Background {i + 1}</span>
+            >
+              <div
+                className="w-full h-full"
+                style={{
+                  background: gradient,
+                }}
+              />
+              <span className="sr-only">Gradient Background {i + 1}</span>
+            </div>
           </Radio>
         );
       })}

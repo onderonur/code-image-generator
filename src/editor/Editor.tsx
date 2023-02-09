@@ -5,7 +5,6 @@ import { Extension } from '@codemirror/state';
 import { ThemeName } from '@/editor/EditorTypes';
 import ReactCodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import * as themes from '@uiw/codemirror-themes-all';
-import styles from './Editor.module.css';
 
 type EditorProps = Pick<
   ReactCodeMirrorProps,
@@ -25,7 +24,7 @@ export default function Editor({
 
   return (
     <div>
-      {isLoading && <div className={styles.editorSkeleton} />}
+      {isLoading && <div className="min-h-[theme('spacing.16')] bg-body-800" />}
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}
         lang={language}
