@@ -24,7 +24,7 @@ export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
           classNames(
             '!cursor-pointer active:!bg-body-700',
             isSelected && '!bg-body-700',
-            isFocused && '!bg-body-800 active:!bg-body-800',
+            isFocused && '!bg-body-800 active:!bg-body-700',
           ),
         menu: () => '!bg-body-900 !z-50 !shadow-popper',
       }}
