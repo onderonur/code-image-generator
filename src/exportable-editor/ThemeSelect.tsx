@@ -34,11 +34,10 @@ type ThemeSelectProps = Pick<
   'inputId' | 'value' | 'onChange'
 >;
 
-export default function ThemeSelect({ value, onChange }: ThemeSelectProps) {
+export default function ThemeSelect(props: ThemeSelectProps) {
   return (
     <BaseSelect<ThemeOption>
-      value={value}
-      onChange={onChange}
+      {...props}
       options={themeNames.map((themeName) => ({
         value: themeName,
         label: themeName,

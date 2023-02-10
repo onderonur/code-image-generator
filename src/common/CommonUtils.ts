@@ -1,3 +1,1 @@
-export function createMockArray(length: number) {
-  return Array.from(Array(length).keys());
-}
+export const APP_TITLE = 'Code Image Generator';

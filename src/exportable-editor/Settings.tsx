@@ -1,7 +1,7 @@
-import ThemeSelect from '@/settings/ThemeSelect';
+import ThemeSelect from '@/exportable-editor/ThemeSelect';
 import { LanguageOption, ThemeOption } from '@/editor/EditorTypes';
-import LanguageSelect from '@/settings/LanguageSelect';
-import GradientRadioGroup from '@/settings/GradientRadioGroup';
+import LanguageSelect from '@/exportable-editor/LanguageSelect';
+import GradientRadioGroup from '@/exportable-editor/GradientRadioGroup';
 import Button from '@/common/Button';
 import Label from '@/common/Label';
 import Divider from '@/common/Divider';

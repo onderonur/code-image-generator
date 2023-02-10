@@ -1,12 +1,14 @@
 import Footer from './Footer';
+import Header from './Header';
 
 type LayoutProps = React.PropsWithChildren;
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div>
-      {children}
+    <>
+      <Header />
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
