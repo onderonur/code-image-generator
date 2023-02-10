@@ -34,7 +34,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
       <div ref={ref} className="relative w-fit mx-auto">
         <div
           className={classNames(
-            'absolute inset-0 transition-opacity duration-300 motion-reduce:transition-none',
+            'absolute inset-0 motion-safe:transition-opacity motion-safe:duration-300',
             isPaddingNone && 'opacity-0',
           )}
           style={{
@@ -43,7 +43,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
         />
         <div
           className={classNames(
-            "bg-no-repeat w-fit min-w-[theme('spacing.64')] mx-auto transition-all duration-300 motion-reduce:transition-none",
+            "bg-no-repeat w-fit min-w-[theme('spacing.64')] mx-auto motion-safe:transition-all motion-safe:duration-300",
             settings.backgroundPadding === BackgroundPadding.XS && 'p-8',
             settings.backgroundPadding === BackgroundPadding.SM && 'p-12',
             settings.backgroundPadding === BackgroundPadding.MD && 'p-16',
@@ -52,7 +52,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
         >
           <div
             className={classNames(
-              'mx-auto rounded-md overflow-hidden relative transition-shadow duration-300 shadow-md',
+              'mx-auto rounded-md overflow-hidden relative motion-safe:transition-shadow motion-safe:duration-300 shadow-md',
               isPaddingNone && 'shadow-none',
               '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12 [&_.cm-editor]:text-md',
             )}

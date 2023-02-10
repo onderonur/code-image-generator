@@ -37,7 +37,7 @@ export default function GradientRadioGroup({
             <div
               className={classNames(
                 'w-6 h-6 rounded-md overflow-hidden',
-                isSelected && 'border-2 border-primary-500 p-1',
+                isSelected && 'border-2 border-primary-600 p-1',
               )}
             >
               <div
