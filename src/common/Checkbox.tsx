@@ -12,7 +12,7 @@ export default function Checkbox({
     <Label
       className={classNames(
         className,
-        'cursor-pointer select-none p-1 rounded-sm hover:bg-body-800 active:bg-body-700 focus:bg-body-700',
+        'cursor-pointer select-none p-1 rounded-sm hover:bg-body-800 active:bg-body-700',
       )}
     >
       <input {...rest} type="checkbox" className="mr-2" />

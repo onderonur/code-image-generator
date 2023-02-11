@@ -42,8 +42,9 @@ export default function Settings({
   return (
     <div className="flex flex-col gap-4 p-4 border-2">
       <div>
-        <Label>Background</Label>
+        <Label htmlFor="gradient-radiogroup">Background</Label>
         <GradientRadioGroup
+          id="gradient-radiogroup"
           value={values.gradient}
           onChange={(gradient) => handleChange('gradient', gradient)}
         />
@@ -67,8 +68,9 @@ export default function Settings({
         />
       </div>
       <div>
-        <Label>Padding</Label>
+        <Label htmlFor="background-padding-radiogroup">Padding</Label>
         <BackgroundPaddingRadioGroup
+          id="background-padding-radiogroup"
           value={values.backgroundPadding}
           onChange={(newBackgroundPadding) =>
             handleChange('backgroundPadding', newBackgroundPadding)

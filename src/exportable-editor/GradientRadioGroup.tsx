@@ -15,16 +15,19 @@ export const gradients = [
 ];
 
 type GradientRadioGroupProps = {
+  id: string;
   value: string;
   onChange: (value: string) => void;
 };
 
 export default function GradientRadioGroup({
+  id,
   value,
   onChange,
 }: GradientRadioGroupProps) {
   return (
     <RadioGroup
+      id={id}
       className="flex flex-wrap gap-1"
       value={value}
       onChange={onChange}

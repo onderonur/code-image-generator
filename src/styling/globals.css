@@ -11,4 +11,8 @@
   body {
     color-scheme: dark;
   }
+
+  * {
+    @apply !outline-primary-300 !outline-offset-2;
+  }
 }

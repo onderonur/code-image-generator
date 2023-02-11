@@ -10,16 +10,16 @@ export enum BackgroundPadding {
 }
 
 type BackgroundPaddingRadioGroupProps = {
+  id: string;
   value: BackgroundPadding;
   onChange: (values: BackgroundPadding) => void;
 };
 
-export default function BackgroundPaddingRadioGroup({
-  value,
-  onChange,
-}: BackgroundPaddingRadioGroupProps) {
+export default function BackgroundPaddingRadioGroup(
+  props: BackgroundPaddingRadioGroupProps,
+) {
   return (
-    <RadioGroup value={value} onChange={onChange}>
+    <RadioGroup {...props}>
       <RadioButton value={BackgroundPadding.NONE}>none</RadioButton>
       <RadioButton value={BackgroundPadding.XS}>xs</RadioButton>
       <RadioButton value={BackgroundPadding.SM}>sm</RadioButton>

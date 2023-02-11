@@ -17,7 +17,7 @@ export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
       classNames={{
         // TODO: react-select styles are injected after our custom styles.
         // So, we used `!important` as a temporary solution.
-        control: () => '!bg-transparent !cursor-pointer',
+        control: () => classNames('!bg-transparent !cursor-pointer'),
         input: () => '!text-text-200',
         singleValue: () => '!text-text-200',
         option: ({ isSelected, isFocused }) =>
