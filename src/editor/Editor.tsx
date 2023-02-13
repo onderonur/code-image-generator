@@ -25,7 +25,7 @@ export default function Editor({
   return (
     <div>
       {isLoading && (
-        <div className="min-h-[theme('spacing.16')] bg-body-800 animate-pulse" />
+        <div className="min-h-[theme(spacing.16)] bg-body-800 animate-pulse" />
       )}
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}

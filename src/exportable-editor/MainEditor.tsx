@@ -43,7 +43,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
         />
         <div
           className={classNames(
-            "bg-no-repeat w-fit min-w-[theme('spacing.64')] mx-auto motion-safe:transition-all motion-safe:duration-300",
+            'bg-no-repeat w-fit min-w-[theme(spacing.64)] mx-auto motion-safe:transition-all motion-safe:duration-300',
             settings.backgroundPadding === BackgroundPadding.XS && 'p-8',
             settings.backgroundPadding === BackgroundPadding.SM && 'p-12',
             settings.backgroundPadding === BackgroundPadding.MD && 'p-16',
@@ -54,7 +54,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
             className={classNames(
               'mx-auto rounded-md overflow-hidden relative motion-safe:transition-shadow motion-safe:duration-300 shadow-md',
               isPaddingNone && 'shadow-none',
-              '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12 [&_.cm-editor]:text-md',
+              '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12',
             )}
           >
             <div className="absolute w-full z-10 py-4 px-6">

@@ -66,7 +66,7 @@ export default function ExportableEditor() {
   );
 
   return (
-    <div className="grid gap-2 p-2 m-auto max-w-screen-xl md:grid-cols-[theme('spacing.72')_1fr]">
+    <div className="grid gap-2 p-2 m-auto max-w-screen-xl md:grid-cols-[theme(spacing.72)_1fr]">
       <div className="hidden md:block md:sticky md:top-2">{settingsForm}</div>
       <div className="flex flex-col gap-2 md:hidden">
         <div className="flex justify-between">
