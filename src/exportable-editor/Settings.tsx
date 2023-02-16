@@ -79,6 +79,7 @@ export default function Settings({
       </div>
       <div>
         <Checkbox
+          name="show-line-numbers"
           checked={values.lineNumbers}
           onChange={(e) => handleChange('lineNumbers', e.target.checked)}
         >

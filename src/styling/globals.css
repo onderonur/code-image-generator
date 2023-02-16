@@ -13,6 +13,10 @@
   }
 
   * {
-    @apply !outline-primary-300 !outline-offset-2;
+    @apply outline-primary-300 outline-offset-2;
+  }
+
+  ::selection {
+    @apply text-primary-700 bg-secondary-200;
   }
 }

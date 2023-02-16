@@ -19,7 +19,7 @@ export default function BackgroundPaddingRadioGroup(
   props: BackgroundPaddingRadioGroupProps,
 ) {
   return (
-    <RadioGroup {...props}>
+    <RadioGroup {...props} name="background-padding">
       <RadioButton value={BackgroundPadding.NONE}>none</RadioButton>
       <RadioButton value={BackgroundPadding.XS}>xs</RadioButton>
       <RadioButton value={BackgroundPadding.SM}>sm</RadioButton>

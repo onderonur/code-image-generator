@@ -23,7 +23,7 @@ function Option({ data, ...rest }: OptionProps<ThemeOption>) {
           />
           <div className="absolute inset-0" />
         </div>
-        <div className="text-center font-semibold">{data.label}</div>
+        <div className="text-center font-semibold text-sm">{data.label}</div>
       </div>
     </components.Option>
   );
@@ -38,6 +38,7 @@ export default function ThemeSelect(props: ThemeSelectProps) {
   return (
     <BaseSelect<ThemeOption>
       {...props}
+      name="theme"
       options={themeNames.map((themeName) => ({
         value: themeName,
         label: themeName,

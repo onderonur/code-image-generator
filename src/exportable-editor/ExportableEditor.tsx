@@ -9,10 +9,10 @@ import MainEditor from '@/exportable-editor/MainEditor';
 import html2canvas from 'html2canvas';
 import Button from '@/common/Button';
 import {
-  AdjustmentsHorizontalIcon,
-  ArrowDownTrayIcon,
-  DocumentDuplicateIcon,
-} from '@heroicons/react/24/outline';
+  MdOutlineSettings,
+  MdOutlineDownload,
+  MdOutlineContentCopy,
+} from 'react-icons/md';
 
 export default function ExportableEditor() {
   const [showSettings, setShowSettings] = useState(false);
@@ -74,18 +74,18 @@ export default function ExportableEditor() {
             aria-label={`${showSettings ? 'Hide' : 'Show'} Settings`}
             onClick={() => setShowSettings((current) => !current)}
           >
-            <AdjustmentsHorizontalIcon />
+            <MdOutlineSettings />
           </Button>
           <div className="flex gap-1">
             <Button aria-label="Copy" title="Copy" onClick={handleCopy}>
-              <DocumentDuplicateIcon />
+              <MdOutlineContentCopy />
             </Button>
             <Button
               aria-label="Download"
               title="Download"
               onClick={handleDownload}
             >
-              <ArrowDownTrayIcon />
+              <MdOutlineDownload />
             </Button>
           </div>
         </div>

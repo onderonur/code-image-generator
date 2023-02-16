@@ -10,7 +10,7 @@ export default function RadioButton<Value extends RadioValue>({
   value: optionValue,
   children,
 }: RadioButtonProps<Value>) {
-  const { value, onChange } = useRadioGroupContext();
+  const { name, value, onChange } = useRadioGroupContext();
   const isChecked = optionValue === value;
 
   return (
@@ -24,6 +24,7 @@ export default function RadioButton<Value extends RadioValue>({
       )}
     >
       <input
+        name={name}
         type="radio"
         className="sr-only"
         value={optionValue}

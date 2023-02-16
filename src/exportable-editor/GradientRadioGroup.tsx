@@ -28,6 +28,7 @@ export default function GradientRadioGroup({
   return (
     <RadioGroup
       id={id}
+      name="gradient"
       className="flex flex-wrap gap-1"
       value={value}
       onChange={onChange}

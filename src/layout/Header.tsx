@@ -1,15 +1,17 @@
 import Link from '@/common/Link';
-import { CodeBracketIcon } from '@heroicons/react/24/outline';
+import { FaGithub } from 'react-icons/fa';
+import Logo from './Logo';
 
 export default function Header() {
   return (
-    <header className="p-4 flex justify-end">
+    <header className="p-4 flex gap-2 justify-between items-center">
+      <Logo className="h-8 w-8" />
       <Link
         aria-label="Check the source code on GitHub"
         href="https://github.com/onderonur/code-image-generator"
         isExternal
       >
-        <CodeBracketIcon className="h-6 w-6" />
+        <FaGithub className="h-8 w-8" />
       </Link>
     </header>
   );

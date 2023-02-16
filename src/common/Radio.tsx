@@ -13,11 +13,12 @@ export default function Radio<Value extends RadioValue>({
   value: optionValue,
   children,
 }: RadioProps<Value>) {
-  const { value, onChange } = useRadioGroupContext();
+  const { name, value, onChange } = useRadioGroupContext();
 
   return (
     <label className={classNames('cursor-pointer', className)}>
       <input
+        name={name}
         type="radio"
         className="sr-only"
         value={optionValue}

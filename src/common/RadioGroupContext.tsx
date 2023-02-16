@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { RadioValue } from './Radio';
 
 type RadioGroupContextValue<Value extends RadioValue> = {
+  name: string;
   value: Value;
   onChange: (value: Value) => void;
 };
@@ -17,17 +18,19 @@ export function useRadioGroupContext() {
 
 type RadioGroupProviderProps<Value extends RadioValue> =
   React.PropsWithChildren<{
+    name: string;
     value: Value;
     onChange: (value: Value) => void;
   }>;
 
 export default function RadioGroupProvider<Value extends RadioValue>({
+  name,
   value,
   children,
   onChange,
 }: RadioGroupProviderProps<Value>) {
   return (
-    <RadioGroupContext.Provider value={{ value, onChange }}>
+    <RadioGroupContext.Provider value={{ name, value, onChange }}>
       {children}
     </RadioGroupContext.Provider>
   );

@@ -13,5 +13,5 @@ type LanguageSelectProps = Pick<
 >;
 
 export default function LanguageSelect(props: LanguageSelectProps) {
-  return <BaseSelect options={languageOptions} {...props} />;
+  return <BaseSelect {...props} name="language" options={languageOptions} />;
 }

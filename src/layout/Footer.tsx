@@ -12,6 +12,9 @@ export default function Footer() {
       <Link href="https://www.linkedin.com/in/onderonur/" isExternal>
         LinkedIn
       </Link>
+      <Link href="https://onderonur.netlify.app/blog" isExternal>
+        Blog
+      </Link>
     </footer>
   );
 }

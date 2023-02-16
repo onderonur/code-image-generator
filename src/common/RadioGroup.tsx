@@ -3,6 +3,7 @@ import { RadioValue } from './Radio';
 
 type RadioGroupProps<Value extends RadioValue> = React.PropsWithChildren<{
   id: string;
+  name: string;
   className?: string;
   value: Value;
   onChange: (value: Value) => void;
@@ -10,6 +11,7 @@ type RadioGroupProps<Value extends RadioValue> = React.PropsWithChildren<{
 
 export default function RadioGroup<Value extends RadioValue>({
   id,
+  name,
   className,
   value,
   children,
@@ -17,7 +19,7 @@ export default function RadioGroup<Value extends RadioValue>({
 }: RadioGroupProps<Value>) {
   return (
     <div role="radiogroup" id={id} className={className}>
-      <RadioGroupProvider value={value} onChange={onChange}>
+      <RadioGroupProvider name={name} value={value} onChange={onChange}>
         {children}
       </RadioGroupProvider>
     </div>
