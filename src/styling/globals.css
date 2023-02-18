@@ -12,11 +12,17 @@
     color-scheme: dark;
   }
 
-  * {
-    @apply outline-primary-300 outline-offset-2;
+  :focus-visible {
+    @apply focused;
   }
 
   ::selection {
     @apply text-primary-700 bg-secondary-200;
+  }
+}
+
+@layer utilities {
+  .focused {
+    @apply outline outline-2 outline-primary-300 outline-offset-2;
   }
 }

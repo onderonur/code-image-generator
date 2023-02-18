@@ -19,7 +19,7 @@ export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
       unstyled
       classNames={{
         container: ({ isFocused }) =>
-          classNames(isFocused && 'outline rounded-md'),
+          classNames(isFocused && 'focused rounded-md'),
         control: () => 'cursor-pointer border border-text-100 rounded-md p-2',
         input: () => 'text-text-200',
         singleValue: () => 'text-text-200',
