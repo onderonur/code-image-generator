@@ -1,40 +1,44 @@
 # Code Image Generator
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+TODO: Change here
+This is a simple e-commerce web application built with [Next.js](https://nextjs.org/). I used the data from [Fake Store API](https://fakestoreapi.com/). It is a really cool API to build e-commerce demo projects. I just wanted some extra fields and I copied its data to change it a little.  
+**Live demo is [here](https://onderonur.github.io/code-image-generator/).**
 
-## Getting Started
+## 💻 Tech Stack
 
-First, run the development server:
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- Framework: [Next.js](https://nextjs.org/)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
+- Linting: [ESLint](https://eslint.org/)
+- Code Formatting: [Prettier](https://prettier.io/)
+- Deployment: [GitHub Pages](https://pages.github.com/) (w/ [GitHub Actions](https://github.com/features/actions))
+
+## ⌨️ Development
+
+To start development, we should install our packages first.
+
+```bash
+npm install
+```
+
+After the installation is completed, we can run the app by:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and it will start on `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To create a production build, we need to run the below command first:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+After this step, we can run the app in `production` mode by:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm start
+```
