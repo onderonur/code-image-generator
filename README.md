@@ -1,7 +1,6 @@
 # Code Image Generator
 
-TODO: Change here
-This is a simple e-commerce web application built with [Next.js](https://nextjs.org/). I used the data from [Fake Store API](https://fakestoreapi.com/). It is a really cool API to build e-commerce demo projects. I just wanted some extra fields and I copied its data to change it a little.  
+Create your code images by choosing different themes and visual settings.  
 **Live demo is [here](https://onderonur.github.io/code-image-generator/).**
 
 ## 💻 Tech Stack

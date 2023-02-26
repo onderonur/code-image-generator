@@ -13,6 +13,7 @@ import {
   MdOutlineDownload,
   MdOutlineContentCopy,
 } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 export default function ExportableEditor() {
   const [showSettings, setShowSettings] = useState(false);
@@ -49,10 +50,12 @@ export default function ExportableEditor() {
   async function handleCopy() {
     const blob = await getBlob();
     navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    toast('Copied to the clipboard', { type: 'success' });
   }
 
   async function handleDownload() {
     const blob = await getBlob();
+    toast('Download will start now', { type: 'success' });
     saveAs(blob, 'code-image-generator.png');
   }
 

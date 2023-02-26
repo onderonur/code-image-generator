@@ -2,12 +2,13 @@ import { Inter } from '@next/font/google';
 import '@/styling/globals.css';
 import { Metadata } from 'next';
 import { APP_TITLE } from '@/common/CommonUtils';
+import { BaseToastContainer } from '@/common/BaseToastContainer';
 
 const font = Inter({ subsets: ['latin'] });
 
 export function generateMetadata(): Metadata {
   const metaTitle = APP_TITLE;
-  const metaDescription = `Create code images with ease by using ${APP_TITLE}`;
+  const metaDescription = `Create your code images by choosing different themes and visual settings by using ${APP_TITLE}`;
   const images = [
     {
       url: '/og-image.jpg',
@@ -50,7 +51,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={font.className}>
       <head />
-      <body className="bg-body-900 text-white">{children}</body>
+      <body className="bg-body-900 text-white">
+        {children}
+        <BaseToastContainer />
+      </body>
     </html>
   );
 }
