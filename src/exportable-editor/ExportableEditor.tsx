@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { gradients } from '@/exportable-editor/GradientRadioGroup';
+import { backgrounds } from '@/exportable-editor/BackgroundRadioGroup';
 import { saveAs } from 'file-saver';
 import Settings, { SettingsValues } from '@/exportable-editor/Settings';
 import { BackgroundPadding } from '@/exportable-editor/BackgroundPaddingRadioGroup';
@@ -19,7 +19,7 @@ export default function ExportableEditor() {
     theme: { value: 'vscodeDark', label: 'vscodeDark' },
     language: { value: 'tsx', label: 'tsx' },
     lineNumbers: false,
-    gradient: gradients[0],
+    background: backgrounds[0],
     backgroundPadding: BackgroundPadding.MD,
   });
 

@@ -12,6 +12,7 @@
     "prefer-destructuring": "warn",
     "prefer-const": "warn",
     "object-shorthand": "warn",
-    "curly": "warn"
+    "curly": "warn",
+    "eqeqeq": "warn"
   }
 }

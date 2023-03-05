@@ -38,7 +38,7 @@ const MainEditor = React.forwardRef<HTMLDivElement, MainEditorProps>(
             isPaddingNone && 'opacity-0',
           )}
           style={{
-            background: settings.gradient,
+            background: settings.background,
           }}
         />
         <div

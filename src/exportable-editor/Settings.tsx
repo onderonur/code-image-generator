@@ -1,7 +1,7 @@
 import ThemeSelect from '@/exportable-editor/ThemeSelect';
 import { LanguageOption, ThemeOption } from '@/editor/EditorTypes';
 import LanguageSelect from '@/exportable-editor/LanguageSelect';
-import GradientRadioGroup from '@/exportable-editor/GradientRadioGroup';
+import BackgroundRadioGroup from '@/exportable-editor/BackgroundRadioGroup';
 import Button from '@/common/Button';
 import Label from '@/common/Label';
 import Divider from '@/common/Divider';
@@ -14,7 +14,7 @@ export type SettingsValues = {
   theme: ThemeOption;
   language: LanguageOption;
   lineNumbers: boolean;
-  gradient: string;
+  background: string;
   backgroundPadding: BackgroundPadding;
 };
 
@@ -42,11 +42,11 @@ export default function Settings({
   return (
     <div className="flex flex-col gap-4 p-4 border-2">
       <div>
-        <Label htmlFor="gradient-radiogroup">Background</Label>
-        <GradientRadioGroup
-          id="gradient-radiogroup"
-          value={values.gradient}
-          onChange={(gradient) => handleChange('gradient', gradient)}
+        <Label htmlFor="background-radiogroup">Background</Label>
+        <BackgroundRadioGroup
+          id="background-radiogroup"
+          value={values.background}
+          onChange={(background) => handleChange('background', background)}
         />
       </div>
       <div>

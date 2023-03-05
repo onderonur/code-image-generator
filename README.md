@@ -1,6 +1,7 @@
 # Code Image Generator
 
 Create your code images by choosing different themes and visual settings.  
+Images can be copied to the clipboard or downloaded as image files to be shared on social media etc.  
 **Live demo is [here](https://onderonur.github.io/code-image-generator/).**
 
 ## 💻 Tech Stack
