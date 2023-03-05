@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef, useState } from 'react';
 import { gradients } from '@/exportable-editor/GradientRadioGroup';
 import { saveAs } from 'file-saver';

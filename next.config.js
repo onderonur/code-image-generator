@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: process.env.BASE_PATH,
-  experimental: {
-    appDir: true,
-  },
+  output: 'export',
 };
 
 module.exports = nextConfig;

@@ -4,14 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@next/font": "^13.2.3",
     "@uiw/codemirror-extensions-langs": "^4.19.8",
     "@uiw/codemirror-themes-all": "^4.19.8",
     "@uiw/react-codemirror": "^4.19.8",
