@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef, useState } from 'react';
 import { backgrounds } from '@/exportable-editor/BackgroundRadioGroup';
 import { saveAs } from 'file-saver';
