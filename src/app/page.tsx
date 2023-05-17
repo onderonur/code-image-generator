@@ -1,5 +1,5 @@
-import Hero from '@/hero/Hero';
-import ExportableEditor from '@/exportable-editor/ExportableEditor';
+import Hero from '@/hero/hero';
+import ExportableEditor from '@/exportable-editor/exportable-editor';
 
 export default function Page() {
   return (

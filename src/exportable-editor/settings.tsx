@@ -1,14 +1,14 @@
-import ThemeSelect from '@/exportable-editor/ThemeSelect';
-import { LanguageOption, ThemeOption } from '@/editor/EditorTypes';
-import LanguageSelect from '@/exportable-editor/LanguageSelect';
-import BackgroundRadioGroup from '@/exportable-editor/BackgroundRadioGroup';
-import Button from '@/common/Button';
-import Label from '@/common/Label';
-import Divider from '@/common/Divider';
-import Checkbox from '@/common/Checkbox';
+import ThemeSelect from '@/exportable-editor/theme-select';
+import { LanguageOption, ThemeOption } from '@/editor/editor-types';
+import LanguageSelect from '@/exportable-editor/language-select';
+import BackgroundRadioGroup from '@/exportable-editor/background-radio-group';
+import Button from '@/common/button';
+import Label from '@/common/label';
+import Divider from '@/common/divider';
+import Checkbox from '@/common/checkbox';
 import BackgroundPaddingRadioGroup, {
   BackgroundPadding,
-} from './BackgroundPaddingRadioGroup';
+} from './background-padding-radio-group';
 
 export type SettingsValues = {
   theme: ThemeOption;

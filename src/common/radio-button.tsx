@@ -1,7 +1,7 @@
-import { useRadioGroupContext } from './RadioGroupContext';
+import { useRadioGroupContext } from './radio-group-context';
 import classNames from 'classnames';
-import { RadioValue } from './Radio';
-import { useFocusVisible } from './CommonHooks';
+import { RadioValue } from './radio';
+import { useFocusVisible } from './common-hooks';
 
 type RadioButtonProps<Value extends RadioValue> = React.PropsWithChildren<{
   value: Value;

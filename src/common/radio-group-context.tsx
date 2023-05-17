@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { RadioValue } from './Radio';
+import { RadioValue } from './radio';
 
 type RadioGroupContextValue<Value extends RadioValue> = {
   name: string;

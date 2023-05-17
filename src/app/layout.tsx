@@ -1,9 +1,9 @@
-import { BaseToastContainer } from '@/common/BaseToastContainer';
+import { BaseToastContainer } from '@/common/base-toast-container';
 import { Inter } from 'next/font/google';
-import Layout from '@/layout/Layout';
-import '@/styling/globals.css';
+import Layout from '@/layout/layout';
+import '@/styles/globals.css';
 import classNames from 'classnames';
-import { APP_TITLE } from '@/common/CommonUtils';
+import { APP_TITLE } from '@/common/common-utils';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 const inter = Inter({

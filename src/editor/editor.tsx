@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { loadLanguage, LanguageName } from '@uiw/codemirror-extensions-langs';
 import { EditorView } from '@codemirror/view';
 import { Extension } from '@codemirror/state';
-import { ThemeName } from '@/editor/EditorTypes';
+import { ThemeName } from '@/editor/editor-types';
 import ReactCodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import * as themes from '@uiw/codemirror-themes-all';
 

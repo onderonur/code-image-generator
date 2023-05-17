@@ -1,5 +1,5 @@
-import Radio from '@/common/Radio';
-import RadioGroup from '@/common/RadioGroup';
+import Radio from '@/common/radio';
+import RadioGroup from '@/common/radio-group';
 import classNames from 'classnames';
 
 // https://coolors.co/gradients

@@ -1,4 +1,4 @@
-import Label from './Label';
+import Label from './label';
 import classNames from 'classnames';
 
 type CheckboxProps = React.ComponentPropsWithoutRef<'input'> & {

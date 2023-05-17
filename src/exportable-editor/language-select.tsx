@@ -1,5 +1,5 @@
 import { langNames, LanguageName } from '@uiw/codemirror-extensions-langs';
-import BaseSelect, { BaseSelectProps } from '@/common/BaseSelect';
+import BaseSelect, { BaseSelectProps } from '@/common/base-select';
 
 type LanguageOption = { value: LanguageName; label: LanguageName };
 

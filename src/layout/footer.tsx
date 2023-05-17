@@ -1,4 +1,4 @@
-import Link from '@/common/Link';
+import Link from '@/common/link';
 
 export default function Footer() {
   return (

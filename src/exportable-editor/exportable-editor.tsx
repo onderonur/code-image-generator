@@ -1,13 +1,13 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { backgrounds } from '@/exportable-editor/BackgroundRadioGroup';
+import { backgrounds } from '@/exportable-editor/background-radio-group';
 import { saveAs } from 'file-saver';
-import Settings, { SettingsValues } from '@/exportable-editor/Settings';
-import { BackgroundPadding } from '@/exportable-editor/BackgroundPaddingRadioGroup';
-import MainEditor from '@/exportable-editor/MainEditor';
+import Settings, { SettingsValues } from '@/exportable-editor/settings';
+import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
+import MainEditor from '@/exportable-editor/main-editor';
 import html2canvas from 'html2canvas';
-import Button from '@/common/Button';
+import Button from '@/common/button';
 import {
   MdOutlineSettings,
   MdOutlineDownload,

@@ -1,5 +1,5 @@
-import RadioGroup from '@/common/RadioGroup';
-import RadioButton from '@/common/RadioButton';
+import RadioGroup from '@/common/radio-group';
+import RadioButton from '@/common/radio-button';
 
 export enum BackgroundPadding {
   NONE,

@@ -1,6 +1,6 @@
-import Link from '@/common/Link';
+import Link from '@/common/link';
 import { FaGithub } from 'react-icons/fa';
-import Logo from './Logo';
+import Logo from './logo';
 
 export default function Header() {
   return (

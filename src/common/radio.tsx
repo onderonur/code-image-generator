@@ -1,6 +1,6 @@
-import { useRadioGroupContext } from './RadioGroupContext';
+import { useRadioGroupContext } from './radio-group-context';
 import classNames from 'classnames';
-import { useFocusVisible } from './CommonHooks';
+import { useFocusVisible } from './common-hooks';
 
 export type RadioValue = string | number;
 
