@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
 import { RadioValue } from './radio';
+import { createSafeContext } from './safe-context';
 
 type RadioGroupContextValue<Value extends RadioValue> = {
   name: string;
@@ -7,14 +7,14 @@ type RadioGroupContextValue<Value extends RadioValue> = {
   onChange: (value: Value) => void;
 };
 
-const RadioGroupContext = React.createContext(
+const [RadioGroupContext, useRadioGroupContext] = createSafeContext<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  {} as RadioGroupContextValue<any>,
-);
+  RadioGroupContextValue<any>
+>({
+  displayName: 'RadioGroupContext',
+});
 
-export function useRadioGroupContext() {
-  return useContext(RadioGroupContext);
-}
+export { useRadioGroupContext };
 
 type RadioGroupProviderProps<Value extends RadioValue> =
   React.PropsWithChildren<{
