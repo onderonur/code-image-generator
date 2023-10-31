@@ -1,10 +1,11 @@
+import '@/styles/globals.css';
 import { BaseToastContainer } from '@/common/base-toast-container';
 import { Inter } from 'next/font/google';
 import Layout from '@/layout/layout';
-import '@/styles/globals.css';
 import classNames from 'classnames';
 import { APP_TITLE } from '@/common/common-utils';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import { Viewport } from 'next';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -29,7 +30,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH as string;
 export const metadata = {
   title,
   description,
-  themeColor: '#0f172a',
   metadataBase: new URL(basePath, baseUrl),
   creator: 'Onur Önder',
   applicationName: APP_TITLE,
@@ -60,6 +60,10 @@ export const metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0f172a',
 };
 
 type RootLayoutProps = React.PropsWithChildren;

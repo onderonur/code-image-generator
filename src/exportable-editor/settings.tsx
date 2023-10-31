@@ -87,10 +87,10 @@ export default function Settings({
         </Checkbox>
       </div>
       <Divider />
-      <Button isFullWidth onClick={onCopy}>
+      <Button className="w-full" onClick={onCopy}>
         Copy
       </Button>
-      <Button isFullWidth onClick={onDownload}>
+      <Button className="w-full" onClick={onDownload}>
         Download
       </Button>
     </div>
