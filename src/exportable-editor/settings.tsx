@@ -1,14 +1,13 @@
 import ThemeSelect from '@/exportable-editor/theme-select';
-import { LanguageOption, ThemeOption } from '@/editor/editor-types';
+import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
 import LanguageSelect from '@/exportable-editor/language-select';
 import BackgroundRadioGroup from '@/exportable-editor/background-radio-group';
 import Button from '@/common/button';
 import Label from '@/common/label';
 import Divider from '@/common/divider';
 import Checkbox from '@/common/checkbox';
-import BackgroundPaddingRadioGroup, {
-  BackgroundPadding,
-} from './background-padding-radio-group';
+import type { BackgroundPadding } from './background-padding-radio-group';
+import BackgroundPaddingRadioGroup from './background-padding-radio-group';
 
 export type SettingsValues = {
   theme: ThemeOption;
@@ -46,7 +45,9 @@ export default function Settings({
         <BackgroundRadioGroup
           id="background-radiogroup"
           value={values.background}
-          onChange={(background) => handleChange('background', background)}
+          onChange={(background) => {
+            handleChange('background', background);
+          }}
         />
       </div>
       <div>
@@ -54,9 +55,11 @@ export default function Settings({
         <LanguageSelect
           inputId="language-select"
           value={values.language}
-          onChange={(language) =>
-            language && handleChange('language', language)
-          }
+          onChange={(language) => {
+            if (language) {
+              handleChange('language', language);
+            }
+          }}
         />
       </div>
       <div>
@@ -64,7 +67,11 @@ export default function Settings({
         <ThemeSelect
           inputId="theme-select"
           value={values.theme}
-          onChange={(theme) => theme && handleChange('theme', theme)}
+          onChange={(theme) => {
+            if (theme) {
+              handleChange('theme', theme);
+            }
+          }}
         />
       </div>
       <div>
@@ -72,16 +79,18 @@ export default function Settings({
         <BackgroundPaddingRadioGroup
           id="background-padding-radiogroup"
           value={values.backgroundPadding}
-          onChange={(newBackgroundPadding) =>
-            handleChange('backgroundPadding', newBackgroundPadding)
-          }
+          onChange={(newBackgroundPadding) => {
+            handleChange('backgroundPadding', newBackgroundPadding);
+          }}
         />
       </div>
       <div>
         <Checkbox
           name="show-line-numbers"
           checked={values.lineNumbers}
-          onChange={(e) => handleChange('lineNumbers', e.target.checked)}
+          onChange={(e) => {
+            handleChange('lineNumbers', e.target.checked);
+          }}
         >
           Show line numbers
         </Checkbox>

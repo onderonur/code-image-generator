@@ -1,8 +1,10 @@
-import { components, OptionProps } from 'react-select';
+import type { OptionProps } from 'react-select';
+import { components } from 'react-select';
 import { themeNames } from '@/editor/editor-utils';
-import { ThemeOption } from '@/editor/editor-types';
+import type { ThemeOption } from '@/editor/editor-types';
 import Editor from '@/editor/editor';
-import BaseSelect, { BaseSelectProps } from '@/common/base-select';
+import type { BaseSelectProps } from '@/common/base-select';
+import BaseSelect from '@/common/base-select';
 
 const editorValue = `function example() {
   console.log("Hi");

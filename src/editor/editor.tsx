@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { loadLanguage, LanguageName } from '@uiw/codemirror-extensions-langs';
+import type { LanguageName } from '@uiw/codemirror-extensions-langs';
+import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import { EditorView } from '@codemirror/view';
-import { Extension } from '@codemirror/state';
-import { ThemeName } from '@/editor/editor-types';
-import ReactCodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import type { Extension } from '@codemirror/state';
+import type { ThemeName } from '@/editor/editor-types';
+import type { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import ReactCodeMirror from '@uiw/react-codemirror';
 import * as themes from '@uiw/codemirror-themes-all';
 
 type EditorProps = Pick<
@@ -24,9 +26,9 @@ export default function Editor({
 
   return (
     <div>
-      {isLoading && (
+      {isLoading ? (
         <div className="min-h-[theme(spacing.16)] bg-body-800 animate-pulse" />
-      )}
+      ) : null}
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}
         lang={language}
@@ -43,7 +45,9 @@ export default function Editor({
           foldGutter: false,
           ...(typeof basicSetup === 'object' ? basicSetup : {}),
         }}
-        onCreateEditor={() => setIsLoading(false)}
+        onCreateEditor={() => {
+          setIsLoading(false);
+        }}
       />
     </div>
   );

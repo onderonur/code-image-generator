@@ -1,7 +1,7 @@
-import { RadioValue } from './radio';
+import type { RadioValue } from './radio';
 import { createSafeContext } from './safe-context';
 
-type RadioGroupContextValue<Value extends RadioValue> = {
+export type RadioGroupContextValue<Value extends RadioValue> = {
   name: string;
   value: Value;
   onChange: (value: Value) => void;

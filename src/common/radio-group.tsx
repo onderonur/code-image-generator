@@ -1,5 +1,5 @@
 import RadioGroupProvider from './radio-group-context';
-import { RadioValue } from './radio';
+import type { RadioValue } from './radio';
 
 type RadioGroupProps<Value extends RadioValue> = React.PropsWithChildren<{
   id: string;

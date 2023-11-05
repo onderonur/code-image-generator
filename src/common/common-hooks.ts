@@ -12,7 +12,11 @@ export function useFocusVisible() {
 
   return {
     isFocusVisible: isFocused && isFocusVisible,
-    onFocus: () => setIsFocused(true),
-    onBlur: () => setIsFocused(false),
+    onFocus: () => {
+      setIsFocused(true);
+    },
+    onBlur: () => {
+      setIsFocused(false);
+    },
   };
 }

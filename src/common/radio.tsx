@@ -1,3 +1,4 @@
+import type { RadioGroupContextValue } from './radio-group-context';
 import { useRadioGroupContext } from './radio-group-context';
 import classNames from 'classnames';
 import { useFocusVisible } from './common-hooks';
@@ -14,7 +15,10 @@ export default function Radio<Value extends RadioValue>({
   value: optionValue,
   children,
 }: RadioProps<Value>) {
-  const { name, value, onChange } = useRadioGroupContext();
+  // TODO: `as RadioGroupContextValue<Value>` is used since `createSafeContext`
+  // does not provide a generically typed `useXContext` function.
+  const { name, value, onChange } =
+    useRadioGroupContext() as RadioGroupContextValue<Value>;
   const { isFocusVisible, onFocus, onBlur } = useFocusVisible();
 
   return (
@@ -31,7 +35,9 @@ export default function Radio<Value extends RadioValue>({
         className="sr-only"
         value={optionValue}
         checked={optionValue === value}
-        onChange={() => onChange(optionValue)}
+        onChange={() => {
+          onChange(optionValue);
+        }}
         onFocus={onFocus}
         onBlur={onBlur}
       />

@@ -1,5 +1,5 @@
-import * as themes from '@uiw/codemirror-themes-all';
-import { LanguageName } from '@uiw/codemirror-extensions-langs';
+import type * as themes from '@uiw/codemirror-themes-all';
+import type { LanguageName } from '@uiw/codemirror-extensions-langs';
 
 export type ThemeName = Exclude<keyof typeof themes, `${string}Init`>;
 

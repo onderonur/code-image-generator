@@ -1,5 +1,5 @@
 import Editor from '@/editor/editor';
-import { SettingsValues } from '@/exportable-editor/settings';
+import type { SettingsValues } from '@/exportable-editor/settings';
 import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
 import classNames from 'classnames';
 import { forwardRef } from 'react';
@@ -26,7 +26,7 @@ type MainEditorProps = {
   settings: SettingsValues;
 };
 
-const MainEditor = forwardRef<HTMLDivElement, MainEditorProps>(
+const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
   function ExportableEditor({ settings }, ref) {
     const isPaddingNone = settings.backgroundPadding === BackgroundPadding.NONE;
 

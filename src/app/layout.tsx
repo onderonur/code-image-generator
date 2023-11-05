@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 import Layout from '@/layout/layout';
 import classNames from 'classnames';
 import { APP_TITLE } from '@/common/common-utils';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
-import { Viewport } from 'next';
+import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import type { Viewport } from 'next';
 
 const inter = Inter({
   variable: '--font-inter',

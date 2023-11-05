@@ -3,7 +3,8 @@
 import { useRef, useState } from 'react';
 import { backgrounds } from '@/exportable-editor/background-radio-group';
 import { saveAs } from 'file-saver';
-import Settings, { SettingsValues } from '@/exportable-editor/settings';
+import type { SettingsValues } from '@/exportable-editor/settings';
+import Settings from '@/exportable-editor/settings';
 import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
 import MainEditor from '@/exportable-editor/main-editor';
 import html2canvas from 'html2canvas';
@@ -25,7 +26,7 @@ export default function ExportableEditor() {
     backgroundPadding: BackgroundPadding.MD,
   });
 
-  const editorRef = useRef<HTMLDivElement>(null);
+  const editorRef = useRef<React.ElementRef<'div'>>(null);
 
   async function getBlob() {
     const editor = editorRef.current;
@@ -49,7 +50,7 @@ export default function ExportableEditor() {
 
   async function handleCopy() {
     const blob = await getBlob();
-    navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     toast('Copied to the clipboard', { type: 'success' });
   }
 
@@ -62,7 +63,9 @@ export default function ExportableEditor() {
   const settingsForm = (
     <Settings
       values={settings}
-      onChange={(newSettings) => setSettings(newSettings)}
+      onChange={(newSettings) => {
+        setSettings(newSettings);
+      }}
       onCopy={handleCopy}
       onDownload={handleDownload}
     />
@@ -75,7 +78,9 @@ export default function ExportableEditor() {
         <div className="flex justify-between">
           <Button
             aria-label={`${showSettings ? 'Hide' : 'Show'} Settings`}
-            onClick={() => setShowSettings((current) => !current)}
+            onClick={() => {
+              setShowSettings((current) => !current);
+            }}
           >
             <MdOutlineSettings />
           </Button>
@@ -92,7 +97,7 @@ export default function ExportableEditor() {
             </Button>
           </div>
         </div>
-        {showSettings && <div>{settingsForm}</div>}
+        {showSettings ? <div>{settingsForm}</div> : null}
       </div>
       <div className="flex-1 p-2 border-2">
         <MainEditor ref={editorRef} settings={settings} />

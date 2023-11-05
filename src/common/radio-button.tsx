@@ -1,6 +1,7 @@
+import type { RadioGroupContextValue } from './radio-group-context';
 import { useRadioGroupContext } from './radio-group-context';
 import classNames from 'classnames';
-import { RadioValue } from './radio';
+import type { RadioValue } from './radio';
 import { useFocusVisible } from './common-hooks';
 
 type RadioButtonProps<Value extends RadioValue> = React.PropsWithChildren<{
@@ -12,7 +13,10 @@ export default function RadioButton<Value extends RadioValue>({
   children,
 }: RadioButtonProps<Value>) {
   const { isFocusVisible, onFocus, onBlur } = useFocusVisible();
-  const { name, value, onChange } = useRadioGroupContext();
+  // TODO: `as RadioGroupContextValue<Value>` is used since `createSafeContext`
+  // does not provide a generically typed `useXContext` function.
+  const { name, value, onChange } =
+    useRadioGroupContext() as RadioGroupContextValue<Value>;
   const isChecked = optionValue === value;
 
   return (
@@ -32,7 +36,9 @@ export default function RadioButton<Value extends RadioValue>({
         className="sr-only"
         value={optionValue}
         checked={isChecked}
-        onChange={() => onChange(optionValue)}
+        onChange={() => {
+          onChange(optionValue);
+        }}
         onFocus={onFocus}
         onBlur={onBlur}
       />
