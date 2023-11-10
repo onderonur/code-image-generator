@@ -32,7 +32,7 @@ export default function Editor({
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}
         lang={language}
-        theme={themes[theme]}
+        theme={themes[theme] as Extension}
         value={value}
         extensions={[
           EditorView.lineWrapping,
