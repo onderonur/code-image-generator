@@ -13,8 +13,8 @@ const editorValue = `function example() {
 function Option({ data, ...rest }: OptionProps<ThemeOption>) {
   return (
     <components.Option data={data} {...rest}>
-      <div className="max-w-xs flex flex-col gap-2 cursor-pointer">
-        <div className="rounded-md shadow-md relative overflow-hidden [&_.cm-editor]:gap-2 [&_.cm-editor]:text-sm">
+      <div className="flex flex-col gap-2 max-w-xs mx-auto cursor-pointer">
+        <div className="rounded-md shadow-md relative overflow-hidden [&_.cm-editor]:text-sm">
           {/* To prevent clicking on the editor to not mess with select.
           Otherwise, select menu gets closed but selected option does not change. */}
           <Editor

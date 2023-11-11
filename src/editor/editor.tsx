@@ -26,13 +26,13 @@ export default function Editor({
 
   return (
     <div>
-      {isLoading ? (
+      {isLoading && (
         <div className="min-h-[theme(spacing.16)] bg-body-800 animate-pulse" />
-      ) : null}
+      )}
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}
         lang={language}
-        theme={themes[theme] as Extension}
+        theme={themes[theme] }
         value={value}
         extensions={[
           EditorView.lineWrapping,
