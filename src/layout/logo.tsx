@@ -2,7 +2,7 @@ type LogoProps = {
   className?: string;
 };
 
-export default function Logo(props: LogoProps) {
+export function Logo(props: LogoProps) {
   return (
     <svg
       {...props}

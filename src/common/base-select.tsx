@@ -8,7 +8,7 @@ export type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
   name: string;
 };
 
-export default function BaseSelect<Option>(props: BaseSelectProps<Option>) {
+export function BaseSelect<Option>(props: BaseSelectProps<Option>) {
   const id = useId();
 
   return (

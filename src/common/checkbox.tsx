@@ -1,11 +1,11 @@
-import Label from './label';
+import { Label } from './label';
 import classNames from 'classnames';
 
 type CheckboxProps = React.ComponentPropsWithoutRef<'input'> & {
   name: string;
 };
 
-export default function Checkbox({
+export function Checkbox({
   name,
   className,
   children,
@@ -15,7 +15,7 @@ export default function Checkbox({
     <Label
       className={classNames(
         className,
-        'cursor-pointer select-none p-1 rounded-sm hover:bg-body-800 active:bg-body-700',
+        'cursor-pointer select-none rounded-sm p-1 hover:bg-body-800 active:bg-body-700',
       )}
     >
       <input name={name} type="checkbox" className="mr-2" {...rest} />

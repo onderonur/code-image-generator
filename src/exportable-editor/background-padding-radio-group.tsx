@@ -1,21 +1,20 @@
-import RadioGroup from '@/common/radio-group';
-import RadioButton from '@/common/radio-button';
+import { RadioButton, RadioGroup } from '@/common/radio-group';
 
 export enum BackgroundPadding {
-  NONE,
-  XS,
-  SM,
-  MD,
-  LG,
+  NONE = 'none',
+  XS = 'xs',
+  SM = 'sm',
+  MD = 'md',
+  LG = 'lg',
 }
 
 type BackgroundPaddingRadioGroupProps = {
   id: string;
   value: BackgroundPadding;
-  onChange: (values: BackgroundPadding) => void;
+  onChange: (newValue: string) => void;
 };
 
-export default function BackgroundPaddingRadioGroup(
+export function BackgroundPaddingRadioGroup(
   props: BackgroundPaddingRadioGroupProps,
 ) {
   return (

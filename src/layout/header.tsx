@@ -1,10 +1,10 @@
-import Link from '@/common/link';
+import { Link } from '@/common/link';
 import { FaGithub } from 'react-icons/fa';
-import Logo from './logo';
+import { Logo } from './logo';
 
-export default function Header() {
+export function Header() {
   return (
-    <header className="p-4 flex gap-2 justify-between items-center">
+    <header className="flex items-center justify-between gap-2 p-4">
       <Logo className="h-8 w-8" />
       <Link
         aria-label="Check the source code on GitHub"

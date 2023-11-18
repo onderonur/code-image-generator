@@ -1,8 +1,8 @@
-import Link from '@/common/link';
+import { Link } from '@/common/link';
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer className="py-14 text-center flex justify-center gap-2">
+    <footer className="flex justify-center gap-2 py-14 text-center">
       <Link href="https://twitter.com/onderonur_" isExternal>
         Twitter
       </Link>

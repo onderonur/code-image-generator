@@ -16,23 +16,18 @@ type EditorProps = Pick<
   theme: ThemeName;
 };
 
-export default function Editor({
-  language,
-  theme,
-  value,
-  basicSetup,
-}: EditorProps) {
+export function Editor({ language, theme, value, basicSetup }: EditorProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div>
       {isLoading && (
-        <div className="min-h-[theme(spacing.16)] bg-body-800 animate-pulse" />
+        <div className="min-h-[theme(spacing.16)] animate-pulse bg-body-800" />
       )}
       <ReactCodeMirror
         className={isLoading ? 'sr-only' : undefined}
         lang={language}
-        theme={themes[theme] }
+        theme={themes[theme]}
         value={value}
         extensions={[
           EditorView.lineWrapping,

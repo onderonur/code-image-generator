@@ -1,13 +1,13 @@
-import ThemeSelect from '@/exportable-editor/theme-select';
+import { ThemeSelect } from '@/exportable-editor/theme-select';
 import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
-import LanguageSelect from '@/exportable-editor/language-select';
-import BackgroundRadioGroup from '@/exportable-editor/background-radio-group';
-import Button from '@/common/button';
-import Label from '@/common/label';
-import Divider from '@/common/divider';
-import Checkbox from '@/common/checkbox';
+import { LanguageSelect } from '@/exportable-editor/language-select';
+import { BackgroundRadioGroup } from '@/exportable-editor/background-radio-group';
+import { Button } from '@/common/button';
+import { Label } from '@/common/label';
+import { Divider } from '@/common/divider';
+import { Checkbox } from '@/common/checkbox';
 import type { BackgroundPadding } from './background-padding-radio-group';
-import BackgroundPaddingRadioGroup from './background-padding-radio-group';
+import { BackgroundPaddingRadioGroup } from './background-padding-radio-group';
 
 export type SettingsValues = {
   theme: ThemeOption;
@@ -24,7 +24,7 @@ type SettingsProps = {
   onDownload: VoidFunction;
 };
 
-export default function Settings({
+export function Settings({
   values,
   onChange,
   onCopy,
@@ -39,7 +39,7 @@ export default function Settings({
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 border-2">
+    <div className="flex flex-col gap-4 border-2 p-4">
       <div>
         <Label htmlFor="background-radiogroup">Background</Label>
         <BackgroundRadioGroup
@@ -80,7 +80,10 @@ export default function Settings({
           id="background-padding-radiogroup"
           value={values.backgroundPadding}
           onChange={(newBackgroundPadding) => {
-            handleChange('backgroundPadding', newBackgroundPadding);
+            handleChange(
+              'backgroundPadding',
+              newBackgroundPadding as BackgroundPadding,
+            );
           }}
         />
       </div>

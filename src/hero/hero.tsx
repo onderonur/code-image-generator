@@ -1,12 +1,12 @@
 import { APP_TITLE } from '@/common/common-utils';
 
-export default function Hero() {
+export function Hero() {
   return (
-    <div className="text-center pb-6 px-2 md:pb-12">
-      <h1 className="text-3xl md:text-5xl md:leading-tight font-black bg-clip-text text-transparent bg-gradient-to-r from-secondary-500 to-secondary-100">
+    <div className="px-2 pb-6 text-center md:pb-12">
+      <h1 className="bg-gradient-to-r from-secondary-500 to-secondary-100 bg-clip-text text-3xl font-black text-transparent md:text-5xl md:leading-tight">
         {APP_TITLE}
       </h1>
-      <p className="text-xl md:text-2xl text-text-200">
+      <p className="text-xl text-text-200 md:text-2xl">
         Create code images with ease
       </p>
     </div>

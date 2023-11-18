@@ -1,9 +1,9 @@
-import Footer from './footer';
-import Header from './header';
+import { Footer } from './footer';
+import { Header } from './header';
 
 type LayoutProps = React.PropsWithChildren;
 
-export default function Layout({ children }: LayoutProps) {
+export function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />

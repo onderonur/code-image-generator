@@ -4,7 +4,7 @@ type LinkProps = React.ComponentPropsWithoutRef<'a'> & {
   isExternal?: boolean;
 };
 
-export default function Link({
+export function Link({
   className,
   isExternal,
   target,
@@ -15,7 +15,7 @@ export default function Link({
     <a
       className={classNames(
         className,
-        'underline text-text-400 hover:text-text-300 active:text-text-200',
+        'text-text-400 underline hover:text-text-300 active:text-text-200',
       )}
       target={isExternal ? '_blank' : target}
       rel={isExternal ? 'noopener noreferrer' : rel}

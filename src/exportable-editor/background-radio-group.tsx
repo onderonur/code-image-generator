@@ -1,5 +1,4 @@
-import Radio from '@/common/radio';
-import RadioGroup from '@/common/radio-group';
+import { Radio, RadioGroup } from '@/common/radio-group';
 import classNames from 'classnames';
 
 // https://coolors.co/gradients
@@ -21,7 +20,7 @@ type BackgroundRadioGroupProps = {
   onChange: (value: string) => void;
 };
 
-export default function BackgroundRadioGroup({
+export function BackgroundRadioGroup({
   id,
   value,
   onChange,
@@ -41,12 +40,12 @@ export default function BackgroundRadioGroup({
           <Radio key={background} value={background}>
             <div
               className={classNames(
-                'w-6 h-6 rounded-md overflow-hidden',
+                'h-6 w-6 overflow-hidden rounded-md',
                 isSelected && 'border-2 border-primary-600 p-1',
               )}
             >
               <div
-                className="w-full h-full"
+                className="h-full w-full"
                 style={{
                   background,
                 }}

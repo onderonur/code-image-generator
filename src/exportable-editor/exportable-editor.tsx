@@ -4,11 +4,11 @@ import { useRef, useState } from 'react';
 import { backgrounds } from '@/exportable-editor/background-radio-group';
 import { saveAs } from 'file-saver';
 import type { SettingsValues } from '@/exportable-editor/settings';
-import Settings from '@/exportable-editor/settings';
+import { Settings } from '@/exportable-editor/settings';
 import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
-import MainEditor from '@/exportable-editor/main-editor';
+import { MainEditor } from '@/exportable-editor/main-editor';
 import html2canvas from 'html2canvas';
-import Button from '@/common/button';
+import { Button } from '@/common/button';
 import {
   MdOutlineSettings,
   MdOutlineDownload,
@@ -16,7 +16,7 @@ import {
 } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
-export default function ExportableEditor() {
+export function ExportableEditor() {
   const [showSettings, setShowSettings] = useState(false);
   const [settings, setSettings] = useState<SettingsValues>({
     theme: { value: 'vscodeDark', label: 'vscodeDark' },
@@ -72,8 +72,8 @@ export default function ExportableEditor() {
   );
 
   return (
-    <div className="grid gap-2 p-2 m-auto max-w-screen-xl md:grid-cols-[theme(spacing.72)_1fr]">
-      <div className="hidden md:block md:sticky md:top-2">{settingsForm}</div>
+    <div className="m-auto grid max-w-screen-xl gap-2 p-2 md:grid-cols-[theme(spacing.72)_1fr]">
+      <div className="hidden md:sticky md:top-2 md:block">{settingsForm}</div>
       <div className="flex flex-col gap-2 md:hidden">
         <div className="flex justify-between">
           <Button
@@ -99,7 +99,7 @@ export default function ExportableEditor() {
         </div>
         {showSettings ? <div>{settingsForm}</div> : null}
       </div>
-      <div className="flex-1 p-2 border-2">
+      <div className="flex-1 border-2 p-2">
         <MainEditor ref={editorRef} settings={settings} />
       </div>
     </div>
