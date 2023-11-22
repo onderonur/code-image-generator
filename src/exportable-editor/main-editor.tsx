@@ -30,6 +30,14 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
   function ExportableEditor({ settings }, ref) {
     const isPaddingNone = settings.backgroundPadding === BackgroundPadding.NONE;
 
+    const padding: Record<BackgroundPadding, string> = {
+      [BackgroundPadding.NONE]: '',
+      [BackgroundPadding.XS]: 'p-4 lg:p-8',
+      [BackgroundPadding.SM]: 'p-6 lg:p-12',
+      [BackgroundPadding.MD]: 'p-8 lg:p-16',
+      [BackgroundPadding.LG]: 'p-10 lg:p20',
+    };
+
     return (
       <div ref={ref} className="relative mx-auto w-fit">
         <div
@@ -44,10 +52,7 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
         <div
           className={classNames(
             'mx-auto w-fit min-w-[theme(spacing.64)] bg-no-repeat motion-safe:transition-all motion-safe:duration-300',
-            settings.backgroundPadding === BackgroundPadding.XS && 'p-8',
-            settings.backgroundPadding === BackgroundPadding.SM && 'p-12',
-            settings.backgroundPadding === BackgroundPadding.MD && 'p-16',
-            settings.backgroundPadding === BackgroundPadding.LG && 'p-20',
+            padding[settings.backgroundPadding],
           )}
         >
           <div
