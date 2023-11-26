@@ -59,7 +59,16 @@ type RootLayoutProps = React.PropsWithChildren;
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={classNames(inter.variable, 'font-sans')}>
+    <html
+      lang="en"
+      className={classNames(
+        inter.variable,
+        'font-sans [color-scheme:dark] selection:bg-secondary-200 selection:text-primary-700',
+        // fluid font-size:
+        // 14px - 16px for 640px - 1024px viewport
+        'text-[clamp(0.875rem,0.667rem+0.52vw,1rem)]',
+      )}
+    >
       <body className="bg-body-900 text-white">
         <Layout>{children}</Layout>
         <BaseToastContainer />

@@ -15,10 +15,10 @@ export function Checkbox({
     <Label
       className={classNames(
         className,
-        'cursor-pointer select-none rounded-sm p-1 hover:bg-body-800 active:bg-body-700',
+        'flex cursor-pointer select-none items-center gap-2 rounded-sm p-1 hover:bg-body-800 active:bg-body-700',
       )}
     >
-      <input name={name} type="checkbox" className="mr-2" {...rest} />
+      <input name={name} type="checkbox" {...rest} />
       {children}
     </Label>
   );

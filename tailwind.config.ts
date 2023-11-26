@@ -1,8 +1,8 @@
+import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -25,4 +25,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+} satisfies Config;

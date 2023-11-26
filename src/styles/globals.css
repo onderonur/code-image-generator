@@ -3,26 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    /* fluid font-size: 14px - 16px for 640px - 1024px viewport */
-    font-size: clamp(0.875rem, 0.667rem + 0.52vw, 1rem);
-  }
-
-  body {
-    color-scheme: dark;
-  }
-
   :focus-visible {
     @apply focused;
-  }
-
-  ::selection {
-    @apply text-primary-700 bg-secondary-200;
   }
 }
 
 @layer utilities {
   .focused {
-    @apply outline outline-2 outline-primary-300 outline-offset-2;
+    @apply outline outline-2 outline-offset-2 outline-primary-300;
   }
 }
