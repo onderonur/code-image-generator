@@ -1,5 +1,5 @@
 import { Radio, RadioGroup } from '@/common/radio-group';
-import classNames from 'classnames';
+import { twJoin } from 'tailwind-merge';
 
 // https://coolors.co/gradients
 export const backgrounds = [
@@ -39,7 +39,7 @@ export function BackgroundRadioGroup({
         return (
           <Radio key={background} value={background}>
             <div
-              className={classNames(
+              className={twJoin(
                 'h-6 w-6 overflow-hidden rounded-md',
                 isSelected && 'border-2 border-primary-600 p-1',
               )}

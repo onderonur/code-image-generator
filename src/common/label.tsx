@@ -1,11 +1,11 @@
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 type LabelProps = React.ComponentPropsWithoutRef<'label'>;
 
 export function Label({ className, ...rest }: LabelProps) {
   return (
     <label
-      className={classNames(className, 'mb-1 block font-medium text-text-300')}
+      className={twMerge('mb-1 block font-medium text-text-300', className)}
       {...rest}
     />
   );

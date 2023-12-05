@@ -1,6 +1,6 @@
-import classNames from 'classnames';
 import { createSafeContext } from './safe-context';
 import { useFocusVisible } from './common-hooks';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 export type RadioGroupContextValue = {
   name: string;
@@ -49,10 +49,10 @@ export function Radio({ className, value: optionValue, children }: RadioProps) {
 
   return (
     <label
-      className={classNames(
+      className={twMerge(
         'cursor-pointer',
-        className,
         isFocusVisible && 'focused',
+        className,
       )}
     >
       <input
@@ -86,7 +86,7 @@ export function RadioButton({
 
   return (
     <label
-      className={classNames(
+      className={twJoin(
         'group cursor-pointer select-none border-2 border-r-0 border-primary-700 px-2 py-1',
         isChecked
           ? 'bg-primary-700'

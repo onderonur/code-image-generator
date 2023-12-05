@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import Select from 'react-select';
-import classNames from 'classnames';
+import { twJoin } from 'tailwind-merge';
 
 export type BaseSelectProps<Option> = React.ComponentPropsWithoutRef<
   typeof Select<Option>
@@ -18,13 +18,12 @@ export function BaseSelect<Option>(props: BaseSelectProps<Option>) {
       menuShouldBlockScroll
       unstyled
       classNames={{
-        container: ({ isFocused }) =>
-          classNames(isFocused && 'focused rounded-md'),
+        container: ({ isFocused }) => (isFocused ? 'focused rounded-md' : ''),
         control: () => 'cursor-pointer border border-text-100 rounded-md p-2',
         input: () => 'text-text-200',
         singleValue: () => 'text-text-200',
         option: ({ isSelected, isFocused }) =>
-          classNames(
+          twJoin(
             'cursor-pointer active:bg-body-700 p-2',
             isSelected && 'bg-body-700',
             isFocused && 'bg-body-800 active:bg-body-700',

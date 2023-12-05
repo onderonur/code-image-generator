@@ -1,5 +1,5 @@
+import { twMerge } from 'tailwind-merge';
 import { Label } from './label';
-import classNames from 'classnames';
 
 type CheckboxProps = React.ComponentPropsWithoutRef<'input'> & {
   name: string;
@@ -13,9 +13,9 @@ export function Checkbox({
 }: CheckboxProps) {
   return (
     <Label
-      className={classNames(
-        className,
+      className={twMerge(
         'flex cursor-pointer select-none items-center gap-2 rounded-sm p-1 hover:bg-body-800 active:bg-body-700',
+        className,
       )}
     >
       <input name={name} type="checkbox" {...rest} />

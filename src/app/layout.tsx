@@ -2,9 +2,9 @@ import '@/styles/globals.css';
 import { BaseToastContainer } from '@/common/base-toast-container';
 import { Inter } from 'next/font/google';
 import { Layout } from '@/layout/layout';
-import classNames from 'classnames';
 import { APP_TITLE } from '@/common/common-utils';
 import type { Viewport } from 'next';
+import { twJoin } from 'tailwind-merge';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={classNames(
+      className={twJoin(
         inter.variable,
         'font-sans [color-scheme:dark] selection:bg-secondary-200 selection:text-primary-700',
         // fluid font-size:

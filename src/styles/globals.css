@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  :focus-visible {
-    @apply focused;
+  a,
+  input,
+  button {
+    @apply focus-visible:focused;
   }
 }
 

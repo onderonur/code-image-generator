@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 type LinkProps = React.ComponentPropsWithoutRef<'a'> & {
   isExternal?: boolean;
@@ -13,9 +13,9 @@ export function Link({
 }: LinkProps) {
   return (
     <a
-      className={classNames(
-        className,
+      className={twMerge(
         'text-text-400 underline hover:text-text-300 active:text-text-200',
+        className,
       )}
       target={isExternal ? '_blank' : target}
       rel={isExternal ? 'noopener noreferrer' : rel}

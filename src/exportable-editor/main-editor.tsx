@@ -1,8 +1,8 @@
 import { Editor } from '@/editor/editor';
 import type { SettingsValues } from '@/exportable-editor/settings';
 import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
-import classNames from 'classnames';
 import { forwardRef } from 'react';
+import { twJoin } from 'tailwind-merge';
 
 const defaultValue = `import { useState } from "react";
 
@@ -41,7 +41,7 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
     return (
       <div ref={ref} className="relative mx-auto w-fit">
         <div
-          className={classNames(
+          className={twJoin(
             'absolute inset-0 motion-safe:transition-opacity motion-safe:duration-300',
             isPaddingNone && 'opacity-0',
           )}
@@ -50,13 +50,13 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
           }}
         />
         <div
-          className={classNames(
+          className={twJoin(
             'mx-auto w-fit min-w-[theme(spacing.64)] bg-no-repeat motion-safe:transition-all motion-safe:duration-300',
             padding[settings.backgroundPadding],
           )}
         >
           <div
-            className={classNames(
+            className={twJoin(
               'relative mx-auto overflow-hidden rounded-md shadow-md motion-safe:transition-shadow motion-safe:duration-300',
               isPaddingNone && 'shadow-none',
               '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12',
@@ -64,15 +64,9 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
           >
             <div className="absolute z-10 w-full px-6 py-4">
               <div className="flex gap-2">
-                <div
-                  className={classNames('h-3 w-3 rounded-full', 'bg-error')}
-                />
-                <div
-                  className={classNames('h-3 w-3 rounded-full', 'bg-alert')}
-                />
-                <div
-                  className={classNames('h-3 w-3 rounded-full', 'bg-success')}
-                />
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-error')} />
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-alert')} />
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-success')} />
               </div>
             </div>
             <Editor
