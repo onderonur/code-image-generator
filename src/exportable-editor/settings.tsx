@@ -1,11 +1,11 @@
-import { ThemeSelect } from '@/exportable-editor/theme-select';
-import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
-import { LanguageSelect } from '@/exportable-editor/language-select';
-import { BackgroundRadioGroup } from '@/exportable-editor/background-radio-group';
 import { Button } from '@/common/button';
-import { Label } from '@/common/label';
-import { Divider } from '@/common/divider';
 import { Checkbox } from '@/common/checkbox';
+import { Divider } from '@/common/divider';
+import { Label } from '@/common/label';
+import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
+import { BackgroundRadioGroup } from '@/exportable-editor/background-radio-group';
+import { LanguageSelect } from '@/exportable-editor/language-select';
+import { ThemeSelect } from '@/exportable-editor/theme-select';
 import type { BackgroundPadding } from './background-padding-radio-group';
 import { BackgroundPaddingRadioGroup } from './background-padding-radio-group';
 

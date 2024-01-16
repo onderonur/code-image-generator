@@ -1,18 +1,18 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { Button } from '@/common/button';
+import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
 import { backgrounds } from '@/exportable-editor/background-radio-group';
-import { saveAs } from 'file-saver';
+import { MainEditor } from '@/exportable-editor/main-editor';
 import type { SettingsValues } from '@/exportable-editor/settings';
 import { Settings } from '@/exportable-editor/settings';
-import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
-import { MainEditor } from '@/exportable-editor/main-editor';
+import { saveAs } from 'file-saver';
 import html2canvas from 'html2canvas';
-import { Button } from '@/common/button';
+import { useRef, useState } from 'react';
 import {
-  MdOutlineSettings,
-  MdOutlineDownload,
   MdOutlineContentCopy,
+  MdOutlineDownload,
+  MdOutlineSettings,
 } from 'react-icons/md';
 import { toast } from 'react-toastify';
 

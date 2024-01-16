@@ -1,9 +1,9 @@
-import '@/styles/globals.css';
 import { BaseToastContainer } from '@/common/base-toast-container';
-import { Inter } from 'next/font/google';
-import { Layout } from '@/layout/layout';
 import { APP_TITLE } from '@/common/common-utils';
+import { Layout } from '@/layout/layout';
+import '@/styles/globals.css';
 import type { Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 
 const inter = Inter({

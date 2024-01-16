@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import type { ThemeName } from '@/editor/editor-types';
+import type { Extension } from '@codemirror/state';
+import { EditorView } from '@codemirror/view';
 import type { LanguageName } from '@uiw/codemirror-extensions-langs';
 import { loadLanguage } from '@uiw/codemirror-extensions-langs';
-import { EditorView } from '@codemirror/view';
-import type { Extension } from '@codemirror/state';
-import type { ThemeName } from '@/editor/editor-types';
+import * as themes from '@uiw/codemirror-themes-all';
 import type { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import ReactCodeMirror from '@uiw/react-codemirror';
-import * as themes from '@uiw/codemirror-themes-all';
+import { useState } from 'react';
 
 type EditorProps = Pick<
   ReactCodeMirrorProps,

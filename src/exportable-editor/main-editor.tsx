@@ -1,6 +1,6 @@
 import { Editor } from '@/editor/editor';
-import type { SettingsValues } from '@/exportable-editor/settings';
 import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
+import type { SettingsValues } from '@/exportable-editor/settings';
 import { forwardRef } from 'react';
 import { twJoin } from 'tailwind-merge';
 

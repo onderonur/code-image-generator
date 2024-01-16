@@ -1,6 +1,6 @@
-import { createSafeContext } from './safe-context';
-import { useFocusVisible } from './common-hooks';
 import { twJoin, twMerge } from 'tailwind-merge';
+import { useFocusVisible } from './common-hooks';
+import { createSafeContext } from './safe-context';
 
 export type RadioGroupContextValue = {
   name: string;
