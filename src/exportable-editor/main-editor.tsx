@@ -35,7 +35,7 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
       [BackgroundPadding.XS]: 'p-4 lg:p-8',
       [BackgroundPadding.SM]: 'p-6 lg:p-12',
       [BackgroundPadding.MD]: 'p-8 lg:p-16',
-      [BackgroundPadding.LG]: 'p-10 lg:p20',
+      [BackgroundPadding.LG]: 'p-10 lg:p-20',
     };
 
     return (
@@ -62,19 +62,19 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
               '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12',
             )}
           >
-            <div className="absolute z-10 w-full px-6 py-4">
-              <div className="flex gap-2">
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-error')} />
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-alert')} />
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-success')} />
-              </div>
-            </div>
             <Editor
               language={settings.language.value}
               theme={settings.theme.value}
               basicSetup={{ lineNumbers: settings.lineNumbers }}
               value={defaultValue}
             />
+            <div className="absolute top-0 w-full px-6 py-4">
+              <div className="flex gap-2">
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-error')} />
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-alert')} />
+                <div className={twJoin('h-3 w-3 rounded-full', 'bg-success')} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
