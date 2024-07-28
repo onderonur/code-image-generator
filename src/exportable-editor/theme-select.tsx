@@ -12,7 +12,7 @@ const editorValue = `function example() {
 
 function Option({ data, ...rest }: OptionProps<ThemeOption>) {
   return (
-    <components.Option data={data} {...rest}>
+    <components.Option {...rest} data={data}>
       <div className="mx-auto flex max-w-xs cursor-pointer flex-col gap-2">
         <div className="relative overflow-hidden rounded-md shadow-md [&_.cm-editor]:text-sm">
           {/* To prevent clicking on the editor to not mess with select.

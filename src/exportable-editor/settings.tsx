@@ -2,19 +2,18 @@ import { Button } from '@/common/button';
 import { Checkbox } from '@/common/checkbox';
 import { Divider } from '@/common/divider';
 import { Label } from '@/common/label';
+import { Ranger } from '@/common/ranger';
 import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
 import { BackgroundRadioGroup } from '@/exportable-editor/background-radio-group';
 import { LanguageSelect } from '@/exportable-editor/language-select';
 import { ThemeSelect } from '@/exportable-editor/theme-select';
-import type { BackgroundPadding } from './background-padding-radio-group';
-import { BackgroundPaddingRadioGroup } from './background-padding-radio-group';
 
 export type SettingsValues = {
   theme: ThemeOption;
   language: LanguageOption;
   lineNumbers: boolean;
   background: string;
-  backgroundPadding: BackgroundPadding;
+  padding: number;
 };
 
 type SettingsProps = {
@@ -41,9 +40,9 @@ export function Settings({
   return (
     <div className="flex flex-col gap-4 border-2 p-4">
       <div>
-        <Label htmlFor="background-radiogroup">Background</Label>
+        <Label htmlFor="background-radio-group">Background</Label>
         <BackgroundRadioGroup
-          id="background-radiogroup"
+          id="background-radio-group"
           value={values.background}
           onChange={(background) => {
             handleChange('background', background);
@@ -75,15 +74,15 @@ export function Settings({
         />
       </div>
       <div>
-        <Label htmlFor="background-padding-radiogroup">Padding</Label>
-        <BackgroundPaddingRadioGroup
-          id="background-padding-radiogroup"
-          value={values.backgroundPadding}
-          onChange={(newBackgroundPadding) => {
-            handleChange(
-              'backgroundPadding',
-              newBackgroundPadding as BackgroundPadding,
-            );
+        <Label htmlFor="padding-ranger">Padding</Label>
+        <Ranger
+          id="padding-ranger"
+          name="padding"
+          value={values.padding}
+          max={5}
+          step={0.01}
+          onChange={(e) => {
+            handleChange('padding', e.target.valueAsNumber);
           }}
         />
       </div>

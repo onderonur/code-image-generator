@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/common/button';
-import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
 import { backgrounds } from '@/exportable-editor/background-radio-group';
 import { MainEditor } from '@/exportable-editor/main-editor';
 import type { SettingsValues } from '@/exportable-editor/settings';
@@ -23,7 +22,7 @@ export function ExportableEditor() {
     language: { value: 'tsx', label: 'tsx' },
     lineNumbers: false,
     background: backgrounds[0],
-    backgroundPadding: BackgroundPadding.MD,
+    padding: 3,
   });
 
   const editorRef = useRef<React.ElementRef<'div'>>(null);

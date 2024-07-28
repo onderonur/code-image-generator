@@ -1,5 +1,4 @@
 import { Editor } from '@/editor/editor';
-import { BackgroundPadding } from '@/exportable-editor/background-padding-radio-group';
 import type { SettingsValues } from '@/exportable-editor/settings';
 import { forwardRef } from 'react';
 import { twJoin } from 'tailwind-merge';
@@ -28,37 +27,28 @@ type MainEditorProps = {
 
 export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
   function ExportableEditor({ settings }, ref) {
-    const isPaddingNone = settings.backgroundPadding === BackgroundPadding.NONE;
-
-    const padding: Record<BackgroundPadding, string> = {
-      [BackgroundPadding.NONE]: '',
-      [BackgroundPadding.XS]: 'p-4 lg:p-8',
-      [BackgroundPadding.SM]: 'p-6 lg:p-12',
-      [BackgroundPadding.MD]: 'p-8 lg:p-16',
-      [BackgroundPadding.LG]: 'p-10 lg:p-20',
-    };
+    const hasNoPadding = !settings.padding;
 
     return (
       <div ref={ref} className="relative mx-auto w-fit">
         <div
-          className={twJoin(
-            'absolute inset-0 motion-safe:transition-opacity motion-safe:duration-300',
-            isPaddingNone && 'opacity-0',
-          )}
+          className={twJoin('absolute inset-0', hasNoPadding && 'opacity-0')}
           style={{
             background: settings.background,
           }}
         />
         <div
           className={twJoin(
-            'mx-auto w-fit min-w-[theme(spacing.64)] bg-no-repeat motion-safe:transition-all motion-safe:duration-300',
-            padding[settings.backgroundPadding],
+            'mx-auto w-fit min-w-[theme(spacing.64)] bg-no-repeat',
           )}
+          style={{
+            padding: `${settings.padding}rem`,
+          }}
         >
           <div
             className={twJoin(
-              'relative mx-auto overflow-hidden rounded-md shadow-md motion-safe:transition-shadow motion-safe:duration-300',
-              isPaddingNone && 'shadow-none',
+              'relative mx-auto overflow-hidden rounded-md shadow-md',
+              hasNoPadding && 'shadow-none',
               '[&_.cm-editor]:p-8 [&_.cm-editor]:pt-12',
             )}
           >

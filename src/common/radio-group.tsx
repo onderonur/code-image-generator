@@ -1,17 +1,20 @@
-import { twJoin, twMerge } from 'tailwind-merge';
+import { createContext, useContext } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useFocusVisible } from './common-hooks';
-import { createSafeContext } from './safe-context';
 
-export type RadioGroupContextValue = {
+type RadioGroupContextValue = {
   name: string;
   value: string;
   onChange: (newValue: string) => void;
 };
 
-const [RadioGroupContext, useRadioGroupContext] =
-  createSafeContext<RadioGroupContextValue>({
-    displayName: 'RadioGroupContext',
-  });
+const RadioGroupContext = createContext<RadioGroupContextValue>(
+  {} as RadioGroupContextValue,
+);
+
+function useRadioGroupContext() {
+  return useContext(RadioGroupContext);
+}
 
 type RadioGroupProps = React.PropsWithChildren<{
   id: string;
@@ -61,46 +64,6 @@ export function Radio({ className, value: optionValue, children }: RadioProps) {
         className="sr-only"
         value={optionValue}
         checked={optionValue === value}
-        onChange={() => {
-          onChange(optionValue);
-        }}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-      {children}
-    </label>
-  );
-}
-
-type RadioButtonProps = React.PropsWithChildren<{
-  value: string;
-}>;
-
-export function RadioButton({
-  value: optionValue,
-  children,
-}: RadioButtonProps) {
-  const { isFocusVisible, onFocus, onBlur } = useFocusVisible();
-  const { name, value, onChange } = useRadioGroupContext();
-  const isChecked = optionValue === value;
-
-  return (
-    <label
-      className={twJoin(
-        'group cursor-pointer select-none border-2 border-r-0 border-primary-700 px-2 py-1',
-        isChecked
-          ? 'bg-primary-700'
-          : 'bg-body-900 hover:bg-body-800 active:bg-body-700',
-        'first:rounded-bl-sm first:rounded-tl-sm last:rounded-br-sm last:rounded-tr-sm last:border-r-2',
-        isFocusVisible && 'focused',
-      )}
-    >
-      <input
-        name={name}
-        type="radio"
-        className="sr-only"
-        value={optionValue}
-        checked={isChecked}
         onChange={() => {
           onChange(optionValue);
         }}
