@@ -30,17 +30,15 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
     const hasNoPadding = !settings.padding;
 
     return (
-      <div ref={ref} className="relative mx-auto w-fit">
+      <div
+        ref={ref}
+        className="mx-auto w-fit"
+        style={{
+          background: hasNoPadding ? undefined : settings.background,
+        }}
+      >
         <div
-          className={twJoin('absolute inset-0', hasNoPadding && 'opacity-0')}
-          style={{
-            background: settings.background,
-          }}
-        />
-        <div
-          className={twJoin(
-            'mx-auto w-fit min-w-[theme(spacing.64)] bg-no-repeat',
-          )}
+          className="min-w-[theme(spacing.64)] bg-no-repeat"
           style={{
             padding: `${settings.padding}rem`,
           }}

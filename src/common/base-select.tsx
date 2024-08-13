@@ -24,7 +24,7 @@ export function BaseSelect<Option>(props: BaseSelectProps<Option>) {
         singleValue: () => 'text-text-200',
         option: ({ isSelected, isFocused }) =>
           twJoin(
-            'cursor-pointer active:bg-body-700 p-2',
+            '!cursor-pointer active:bg-body-700 p-2',
             isSelected && 'bg-body-700',
             isFocused && 'bg-body-800 active:bg-body-700',
           ),
