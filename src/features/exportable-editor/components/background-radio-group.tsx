@@ -1,4 +1,4 @@
-import { Radio, RadioGroup } from '@/common/radio-group';
+import { Radio, RadioGroup } from '@/core/ui/components/radio-group';
 import { twJoin } from 'tailwind-merge';
 
 // https://coolors.co/gradients

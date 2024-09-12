@@ -1,7 +1,7 @@
-import { BaseToastContainer } from '@/common/base-toast-container';
-import { APP_TITLE } from '@/common/common-utils';
-import { Layout } from '@/layout/layout';
-import '@/styles/globals.css';
+import { APP_TITLE } from '@/core/core.utils';
+import { Layout } from '@/core/layout/components/layout';
+import '@/core/styles/globals.css';
+import { BaseToastContainer } from '@/core/ui/components/base-toast-container';
 import type { Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';

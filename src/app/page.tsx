@@ -1,5 +1,5 @@
-import { ExportableEditor } from '@/exportable-editor/exportable-editor';
-import { Hero } from '@/hero/hero';
+import { Hero } from '@/core/layout/components/hero';
+import { ExportableEditor } from '@/features/exportable-editor/components/exportable-editor';
 
 export default function Page() {
   return (

@@ -1,4 +1,4 @@
-import { NextLink } from '@/common/link';
+import { NextLink } from '@/core/ui/components/link';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { TbWorld } from 'react-icons/tb';
 

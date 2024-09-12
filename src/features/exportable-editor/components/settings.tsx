@@ -1,12 +1,15 @@
-import { Button } from '@/common/button';
-import { Checkbox } from '@/common/checkbox';
-import { Divider } from '@/common/divider';
-import { Label } from '@/common/label';
-import { Ranger } from '@/common/ranger';
-import type { LanguageOption, ThemeOption } from '@/editor/editor-types';
-import { BackgroundRadioGroup } from '@/exportable-editor/background-radio-group';
-import { LanguageSelect } from '@/exportable-editor/language-select';
-import { ThemeSelect } from '@/exportable-editor/theme-select';
+import { Button } from '@/core/ui/components/button';
+import { Checkbox } from '@/core/ui/components/checkbox';
+import { Divider } from '@/core/ui/components/divider';
+import { Label } from '@/core/ui/components/label';
+import { Ranger } from '@/core/ui/components/ranger';
+import type {
+  LanguageOption,
+  ThemeOption,
+} from '@/features/editor/editor.types';
+import { BackgroundRadioGroup } from '@/features/exportable-editor/components/background-radio-group';
+import { LanguageSelect } from '@/features/exportable-editor/components/language-select';
+import { ThemeSelect } from '@/features/exportable-editor/components/theme-select';
 
 export type SettingsValues = {
   theme: ThemeOption;

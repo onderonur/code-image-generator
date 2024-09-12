@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useFocusVisible } from './common-hooks';
+import { useFocusVisible } from '../ui.hooks';
 
 type RadioGroupContextValue = {
   name: string;

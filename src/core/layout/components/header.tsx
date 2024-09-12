@@ -1,4 +1,4 @@
-import { NextLink } from '@/common/link';
+import { NextLink } from '@/core/ui/components/link';
 import { FaGithub } from 'react-icons/fa';
 import { Logo } from './logo';
 

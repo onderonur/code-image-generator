@@ -1,10 +1,10 @@
 'use client';
 
-import { Button } from '@/common/button';
-import { backgrounds } from '@/exportable-editor/background-radio-group';
-import { MainEditor } from '@/exportable-editor/main-editor';
-import type { SettingsValues } from '@/exportable-editor/settings';
-import { Settings } from '@/exportable-editor/settings';
+import { Button } from '@/core/ui/components/button';
+import { backgrounds } from '@/features/exportable-editor/components/background-radio-group';
+import { MainEditor } from '@/features/exportable-editor/components/main-editor';
+import type { SettingsValues } from '@/features/exportable-editor/components/settings';
+import { Settings } from '@/features/exportable-editor/components/settings';
 import { saveAs } from 'file-saver';
 import html2canvas from 'html2canvas';
 import { useRef, useState } from 'react';

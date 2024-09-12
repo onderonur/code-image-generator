@@ -1,4 +1,4 @@
-import type { ThemeName } from '@/editor/editor-types';
+import type { ThemeName } from '@/features/editor/editor.types';
 import type { Extension } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
 import type { LanguageName } from '@uiw/codemirror-extensions-langs';

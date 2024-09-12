@@ -1,5 +1,5 @@
-import { Editor } from '@/editor/editor';
-import type { SettingsValues } from '@/exportable-editor/settings';
+import { Editor } from '@/features/editor/components/editor';
+import type { SettingsValues } from '@/features/exportable-editor/components/settings';
 import { forwardRef } from 'react';
 import { twJoin } from 'tailwind-merge';
 

@@ -1,4 +1,4 @@
-import { APP_TITLE } from '@/common/common-utils';
+import { APP_TITLE } from '@/core/core.utils';
 
 export function Hero() {
   return (

@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import type { Omit } from './common-types';
+import type { Omit } from '../../core.types';
 
 type RangerProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type'>;
 
