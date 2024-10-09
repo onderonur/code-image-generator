@@ -18,7 +18,7 @@ export function Checkbox({
         className,
       )}
     >
-      <input {...rest} name={name} type="checkbox" />
+      <input {...rest} name={name} type="checkbox" className="cursor-pointer" />
       {children}
     </Label>
   );
