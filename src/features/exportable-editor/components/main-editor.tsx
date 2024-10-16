@@ -58,9 +58,9 @@ export const MainEditor = forwardRef<React.ElementRef<'div'>, MainEditorProps>(
             />
             <div className="absolute top-0 w-full px-6 py-4">
               <div className="flex gap-2">
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-error')} />
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-alert')} />
-                <div className={twJoin('h-3 w-3 rounded-full', 'bg-success')} />
+                <div className={twJoin('size-3 rounded-full', 'bg-error')} />
+                <div className={twJoin('size-3 rounded-full', 'bg-alert')} />
+                <div className={twJoin('size-3 rounded-full', 'bg-success')} />
               </div>
             </div>
           </div>

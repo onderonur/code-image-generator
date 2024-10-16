@@ -18,13 +18,13 @@ Images can be copied to the clipboard or downloaded as image files to be shared 
 To start development, we should install our packages first.
 
 ```bash
-npm install
+pnpm install
 ```
 
 After the installation is completed, we can run the app by:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 and it will start on `http://localhost:3000`.
@@ -34,11 +34,11 @@ and it will start on `http://localhost:3000`.
 To create a production build, we need to run the below command first:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 After this step, we can run the app in `production` mode by:
 
 ```bash
-npm start
+pnpm start
 ```
