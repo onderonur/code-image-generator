@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  // https://nextjs.org/docs/app/building-your-application/deploying/static-exports
   output: 'export',
   images: {
     unoptimized: true,

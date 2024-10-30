@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, use } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useFocusVisible } from '../ui.hooks';
 
@@ -13,38 +13,39 @@ const RadioGroupContext = createContext<RadioGroupContextValue>(
 );
 
 function useRadioGroupContext() {
-  return useContext(RadioGroupContext);
+  return use(RadioGroupContext);
 }
 
-type RadioGroupProps = React.PropsWithChildren<{
-  id: string;
+export type RadioGroupProps = React.AriaAttributes & {
   name: string;
   className?: string;
   value: string;
+  children: React.ReactNode;
   onChange: (value: string) => void;
-}>;
+};
 
 export function RadioGroup({
-  id,
   name,
   className,
   value,
   children,
   onChange,
+  ...rest
 }: RadioGroupProps) {
   return (
-    <div role="radiogroup" id={id} className={className}>
-      <RadioGroupContext.Provider value={{ name, value, onChange }}>
+    <div role="radiogroup" className={className} {...rest}>
+      <RadioGroupContext value={{ name, value, onChange }}>
         {children}
-      </RadioGroupContext.Provider>
+      </RadioGroupContext>
     </div>
   );
 }
 
-type RadioProps = React.PropsWithChildren<{
+type RadioProps = {
   className?: string;
   value: string;
-}>;
+  children: React.ReactNode;
+};
 
 export function Radio({ className, value: optionValue, children }: RadioProps) {
   const { name, value, onChange } = useRadioGroupContext();

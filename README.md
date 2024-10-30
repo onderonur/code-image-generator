@@ -27,7 +27,7 @@ After the installation is completed, we can run the app by:
 pnpm dev
 ```
 
-and it will start on `http://localhost:3000`.
+and it will start on `http://localhost:3000/code-image-generator`.
 
 ## 🚀 Build
 

@@ -1,3 +1,4 @@
+import type { RadioGroupProps } from '@/core/ui/components/radio-group';
 import { Radio, RadioGroup } from '@/core/ui/components/radio-group';
 import { twJoin } from 'tailwind-merge';
 
@@ -14,24 +15,21 @@ export const backgrounds = [
   'linear-gradient(90deg, hsla(40, 94%, 74%, 1) 0%, hsla(60, 89%, 72%, 1) 100%)',
 ];
 
-type BackgroundRadioGroupProps = {
-  id: string;
-  value: string;
-  onChange: (value: string) => void;
-};
+type BackgroundRadioGroupProps = Pick<
+  RadioGroupProps,
+  'aria-labelledby' | 'value' | 'onChange'
+>;
 
 export function BackgroundRadioGroup({
-  id,
   value,
-  onChange,
+  ...rest
 }: BackgroundRadioGroupProps) {
   return (
     <RadioGroup
-      id={id}
       name="background"
       className="flex flex-wrap gap-1"
       value={value}
-      onChange={onChange}
+      {...rest}
     >
       {backgrounds.map((background, i) => {
         const isSelected = value === background;

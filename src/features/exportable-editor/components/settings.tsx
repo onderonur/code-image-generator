@@ -43,9 +43,11 @@ export function Settings({
   return (
     <div className="flex flex-col gap-4 border-2 p-4">
       <div>
-        <Label htmlFor="background-radio-group">Background</Label>
+        <Label as="div" id="background-radio-group-label">
+          Background
+        </Label>
         <BackgroundRadioGroup
-          id="background-radio-group"
+          aria-labelledby="background-radio-group-label"
           value={values.background}
           onChange={(background) => {
             handleChange('background', background);
@@ -57,8 +59,10 @@ export function Settings({
         <LanguageSelect
           inputId="language-select"
           value={values.language}
+          // @ts-expect-error - TODO: Will fix this
           onChange={(language) => {
             if (language) {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- TODO: Will fix this
               handleChange('language', language);
             }
           }}
@@ -69,8 +73,10 @@ export function Settings({
         <ThemeSelect
           inputId="theme-select"
           value={values.theme}
+          // @ts-expect-error - TODO: Will fix this
           onChange={(theme) => {
             if (theme) {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- TODO: Will fix this
               handleChange('theme', theme);
             }
           }}

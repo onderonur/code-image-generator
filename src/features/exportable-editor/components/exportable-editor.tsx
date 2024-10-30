@@ -25,7 +25,7 @@ export function ExportableEditor() {
     padding: 3,
   });
 
-  const editorRef = useRef<React.ElementRef<'div'>>(null);
+  const editorRef = useRef<React.ComponentRef<'div'>>(null);
 
   async function getBlob() {
     const editor = editorRef.current;
