@@ -1,20 +1,14 @@
 import { twMerge } from 'tailwind-merge';
+import type { AsChildProps } from './slot';
+import { Slot } from './slot';
 
-type LabelProps<As extends React.ElementType = 'label'> =
-  React.ComponentPropsWithoutRef<As> & {
-    as?: As;
-    className?: string;
-  };
+type LabelProps = AsChildProps & React.ComponentProps<'label'>;
 
-export function Label<As extends React.ElementType = 'label'>({
-  as,
-  className,
-  ...rest
-}: LabelProps<As>) {
-  const As = as ?? 'label';
+export function Label({ asChild, className, ...rest }: LabelProps) {
+  const Component = asChild ? Slot : 'label';
 
   return (
-    <As
+    <Component
       {...rest}
       className={twMerge('mb-1 block font-medium text-text-300', className)}
     />

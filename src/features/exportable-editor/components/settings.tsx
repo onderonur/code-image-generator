@@ -43,8 +43,8 @@ export function Settings({
   return (
     <div className="flex flex-col gap-4 border-2 p-4">
       <div>
-        <Label as="div" id="background-radio-group-label">
-          Background
+        <Label asChild id="background-radio-group-label">
+          <div>Background</div>
         </Label>
         <BackgroundRadioGroup
           aria-labelledby="background-radio-group-label"
