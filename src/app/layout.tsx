@@ -1,5 +1,5 @@
 import { APP_TITLE } from '@/core/core.utils';
-import { Layout } from '@/core/layout/components/layout';
+import { Layout } from '@/core/layouts/components/layout';
 import '@/core/styles/globals.css';
 import { BaseToastContainer } from '@/core/ui/components/base-toast-container';
 import type { Viewport } from 'next';

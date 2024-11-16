@@ -59,10 +59,8 @@ export function Settings({
         <LanguageSelect
           inputId="language-select"
           value={values.language}
-          // @ts-expect-error - TODO: Will fix this
           onChange={(language) => {
             if (language) {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- TODO: Will fix this
               handleChange('language', language);
             }
           }}
@@ -73,10 +71,8 @@ export function Settings({
         <ThemeSelect
           inputId="theme-select"
           value={values.theme}
-          // @ts-expect-error - TODO: Will fix this
           onChange={(theme) => {
             if (theme) {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- TODO: Will fix this
               handleChange('theme', theme);
             }
           }}

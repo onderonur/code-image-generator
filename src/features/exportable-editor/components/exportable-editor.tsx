@@ -30,9 +30,7 @@ export function ExportableEditor() {
   async function getBlob() {
     const editor = editorRef.current;
 
-    if (!editor) {
-      throw new Error('Editor node can not be found');
-    }
+    if (!editor) throw new Error('Editor node can not be found');
 
     const canvas = await html2canvas(editor);
 

@@ -19,7 +19,7 @@ export default {
       },
       boxShadow: {
         popper:
-          'hsl(206 15% 60% / 0.2) 0px 0px 15px, hsla(206 15% 60% / 0.15) 0px 0px 3px 1px',
+          'hsl(206 15% 60% / 0.2) 0px 0px 15px, hsl(206 15% 60% / 0.15) 0px 0px 3px 1px',
       },
     },
   },

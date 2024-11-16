@@ -1,4 +1,4 @@
-import { Hero } from '@/core/layout/components/hero';
+import { Hero } from '@/core/layouts/components/hero';
 import { ExportableEditor } from '@/features/exportable-editor/components/exportable-editor';
 
 export default function Page() {
