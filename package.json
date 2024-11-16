@@ -4,18 +4,18 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "codequality:check": "pnpm format:check && pnpm lint:check && pnpm types:check",
-    "codequality:fix": "pnpm format:fix && pnpm lint:fix && pnpm types:check",
+    "codequality": "pnpm format && pnpm lint && pnpm typecheck",
+    "codequality:fix": "pnpm format:fix && pnpm lint:fix && pnpm typecheck",
     "dev": "next dev --turbopack",
-    "format:check": "prettier --check --ignore-unknown .",
+    "format": "prettier --check --ignore-unknown .",
     "format:fix": "prettier --write --ignore-unknown .",
-    "lint:check": "next lint --max-warnings 0",
+    "lint": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix --max-warnings 0",
     "prepare": "husky",
     "start": "next start",
-    "types:check": "tsc",
-    "unused:check": "knip",
-    "updates:check": "npm-check-updates -i"
+    "typecheck": "tsc",
+    "unused": "knip",
+    "updates": "npm-check-updates -i"
   },
   "dependencies": {
     "@codemirror/state": "^6.4.1",

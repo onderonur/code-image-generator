@@ -8,12 +8,12 @@ type RadioGroupContextValue = {
   onChange: (newValue: string) => void;
 };
 
-const RadioGroupContext = createContext<RadioGroupContextValue>(
-  {} as RadioGroupContextValue,
-);
+const RadioGroupContext = createContext<RadioGroupContextValue | null>(null);
 
 function useRadioGroupContext() {
-  return use(RadioGroupContext);
+  const value = use(RadioGroupContext);
+  if (!value) throw new Error('RadioGroupContext not found');
+  return value;
 }
 
 export type RadioGroupProps = React.AriaAttributes & {
