@@ -1,8 +1,8 @@
 import type { BaseSelectProps } from '@/core/ui/components/base-select';
 import { BaseSelect } from '@/core/ui/components/base-select';
 import { Editor } from '@/features/editor/components/editor';
-import type { ThemeOption } from '@/features/editor/editor.types';
-import { themeNames } from '@/features/editor/editor.utils';
+import type { ThemeOption } from '@/features/editor/types';
+import { themeNames } from '@/features/editor/utils';
 import type { OptionProps } from 'react-select';
 import { components } from 'react-select';
 

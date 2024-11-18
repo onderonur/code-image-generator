@@ -3,10 +3,7 @@ import { Checkbox } from '@/core/ui/components/checkbox';
 import { Divider } from '@/core/ui/components/divider';
 import { Label } from '@/core/ui/components/label';
 import { Ranger } from '@/core/ui/components/ranger';
-import type {
-  LanguageOption,
-  ThemeOption,
-} from '@/features/editor/editor.types';
+import type { LanguageOption, ThemeOption } from '@/features/editor/types';
 import { BackgroundRadioGroup } from '@/features/exportable-editor/components/background-radio-group';
 import { LanguageSelect } from '@/features/exportable-editor/components/language-select';
 import { ThemeSelect } from '@/features/exportable-editor/components/theme-select';
