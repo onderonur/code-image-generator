@@ -1,5 +1,5 @@
-import type { BaseSelectProps } from '@/core/ui/components/base-select';
-import { BaseSelect } from '@/core/ui/components/base-select';
+import type { BaseSelectProps } from '@/core/forms/components/base-select';
+import { BaseSelect } from '@/core/forms/components/base-select';
 import type { LanguageName } from '@uiw/codemirror-extensions-langs';
 import { langNames } from '@uiw/codemirror-extensions-langs';
 

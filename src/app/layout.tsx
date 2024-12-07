@@ -2,7 +2,7 @@ import { Layout } from '@/core/layouts/components/layout';
 import { APP_TITLE } from '@/core/shared/utils';
 import '@/core/styles/globals.css';
 import { BaseToastContainer } from '@/core/ui/components/base-toast-container';
-import type { Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 
@@ -18,7 +18,7 @@ const description = `Create your code images by choosing different themes and vi
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH as string;
 
-export const metadata = {
+export const metadata: Metadata = {
   title,
   description,
   metadataBase: new URL(basePath, baseUrl),
@@ -65,13 +65,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang="en"
       className={twJoin(
         inter.variable,
-        'font-sans [color-scheme:dark] selection:bg-secondary-200 selection:text-primary-700',
+        'font-sans antialiased [color-scheme:dark] selection:bg-secondary-200 selection:text-primary-700',
         // fluid font-size:
         // 14px - 16px for 640px - 1024px viewport
         'text-[clamp(0.875rem,0.667rem+0.52vw,1rem)]',
       )}
     >
-      <body className="bg-body-900 text-white">
+      <body className="bg-body-950 text-white">
         <Layout>{children}</Layout>
         <BaseToastContainer />
       </body>

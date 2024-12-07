@@ -1,5 +1,5 @@
-import type { RadioGroupProps } from '@/core/ui/components/radio-group';
-import { Radio, RadioGroup } from '@/core/ui/components/radio-group';
+import type { RadioGroupProps } from '@/core/forms/components/radio-group';
+import { Radio, RadioGroup } from '@/core/forms/components/radio-group';
 import { twJoin } from 'tailwind-merge';
 
 // https://coolors.co/gradients

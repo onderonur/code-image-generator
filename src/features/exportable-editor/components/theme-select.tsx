@@ -1,5 +1,5 @@
-import type { BaseSelectProps } from '@/core/ui/components/base-select';
-import { BaseSelect } from '@/core/ui/components/base-select';
+import type { BaseSelectProps } from '@/core/forms/components/base-select';
+import { BaseSelect } from '@/core/forms/components/base-select';
 import { Editor } from '@/features/editor/components/editor';
 import type { ThemeOption } from '@/features/editor/types';
 import { themeNames } from '@/features/editor/utils';

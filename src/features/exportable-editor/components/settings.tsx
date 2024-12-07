@@ -1,8 +1,8 @@
+import { Checkbox } from '@/core/forms/components/checkbox';
+import { Label } from '@/core/forms/components/label';
+import { Ranger } from '@/core/forms/components/ranger';
 import { Button } from '@/core/ui/components/button';
-import { Checkbox } from '@/core/ui/components/checkbox';
 import { Divider } from '@/core/ui/components/divider';
-import { Label } from '@/core/ui/components/label';
-import { Ranger } from '@/core/ui/components/ranger';
 import type { LanguageOption, ThemeOption } from '@/features/editor/types';
 import { BackgroundRadioGroup } from '@/features/exportable-editor/components/background-radio-group';
 import { LanguageSelect } from '@/features/exportable-editor/components/language-select';

@@ -1,6 +1,6 @@
+import type { AsChildProps } from '@/core/ui/components/slot';
+import { Slot } from '@/core/ui/components/slot';
 import { twMerge } from 'tailwind-merge';
-import type { AsChildProps } from './slot';
-import { Slot } from './slot';
 
 type LabelProps = AsChildProps & React.ComponentProps<'label'>;
 
